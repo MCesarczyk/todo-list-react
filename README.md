@@ -1,6 +1,8 @@
 # tasklist
 
-To-do list anymore made using React.js
+<img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_2164,w_3845,x_0,y_259/f_auto,q_auto,w_1100/v1554918405/shape/mentalfloss/94735-istock-863607936.jpg" alt="to-do-list" width=500px />
+
+To-do list made using React.js
 
 ## demo:
 
@@ -22,6 +24,10 @@ With this app You're able to:
 - mark it as done individually
 - mark as done all at once
 - hide done tasks
+
+## How to use this app:
+
+![to-do-list demo animation](./public/tasklist_demo.gif)
 
 # Getting Started with Create React App
 
