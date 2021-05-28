@@ -27,7 +27,7 @@ With this app You're able to:
 
 ## How to use this app:
 
-![to-do-list demo animation](./public/tasklist_demo.gif)
+<img src="%PUBLIC_URL%/../public/tasklist_demo.gif" alt="to-do-list demo animation" width=500px />
 
 # Getting Started with Create React App
 
