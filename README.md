@@ -1,3 +1,28 @@
+# tasklist
+
+To-do list anymore made using React.js
+
+## demo:
+
+https://mcesarczyk.github.io/todo-list-react/
+
+## used technologies:
+- html
+- CSS
+- JS/ES6+
+- BEM
+- Flex
+- Grid
+- Immutability
+- React.js
+
+## short description:
+With this app You're able to:
+- add/remove tasks
+- mark it as done individually
+- mark as done all at once
+- hide done tasks
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

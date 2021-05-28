@@ -3,7 +3,7 @@
 }
 
 .section__headerContainer {
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 10px;
     align-items: center;
@@ -19,8 +19,6 @@
     }
 }
 
-
-
 .section__header {
     background-color: #fff;
     padding: 15px;
@@ -28,4 +26,3 @@
     font-size: 20px;
     margin: 0 0 1px 0;
 }
-
