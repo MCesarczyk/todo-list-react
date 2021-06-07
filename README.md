@@ -1,24 +1,25 @@
-# tasklist
+# Todo-list
 
 <img src="https://images2.minutemediacdn.com/image/upload/c_crop,h_2164,w_3845,x_0,y_259/f_auto,q_auto,w_1100/v1554918405/shape/mentalfloss/94735-istock-863607936.jpg" alt="to-do-list" width=500px />
 
-To-do list made using React.js
+Todo list made using React.js
 
-## demo:
+## Demo:
 
 https://mcesarczyk.github.io/todo-list-react/
 
-## used technologies:
+## Used technologies:
 - html
 - CSS
+- CSS-Flexbox
+- CSS-Grid
+- Media queries
 - JS/ES6+
 - BEM
-- Flex
-- Grid
 - Immutability
 - React.js
 
-## short description:
+## Short description:
 With this app You're able to:
 - add/remove tasks
 - mark it as done individually
@@ -28,6 +29,14 @@ With this app You're able to:
 ## How to use this app:
 
 <img src="%PUBLIC_URL%/../public/tasklist_demo.gif" alt="to-do-list demo animation" width=500px />
+
+1. To add task write its content and click "Dodaj zadanie" button or simply click Enter.
+2. If you want to mark task as done click on green field on the list.
+3. In the same way you can uncheck chosen tasks.
+4. To remove single task click on red button with trash bin icon on right.
+5. If you want to hide all done tasks clisk on button "Ukryj ukończone". Description on button will now change to "Pokaż ukończone". To restore tasks, click this button again.
+6. When you done all task and want to check them, click on "Ukończ wszystkie". Button will become inactive then.
+7. After removing all tasks, buttons "Ukończ wszystkie" and "Ukryj ukończone" will disappear.
 
 # Getting Started with Create React App
 
