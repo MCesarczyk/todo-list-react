@@ -31,7 +31,7 @@ function App() {
     }))
   };
 
-  const setAlldone = () => {
+  const setAllDone = () => {
     setTasks(tasks => tasks.map(task => ({
       ...task,
       done: true,
@@ -71,7 +71,7 @@ function App() {
             tasks={tasks}
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
-            setAlldone={setAlldone}
+            setAllDone={setAllDone}
           />
         }
       />
