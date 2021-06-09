@@ -14,3 +14,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14 px;
 }
+
+button {
+  cursor: pointer;
+}

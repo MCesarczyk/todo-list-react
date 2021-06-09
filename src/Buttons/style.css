@@ -32,4 +32,5 @@
 
 .buttons__button:disabled {
     color: #ccc;
+    cursor: unset ;
 }
