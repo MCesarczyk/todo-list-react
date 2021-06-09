@@ -23,7 +23,7 @@ const Form = ({ addNewTask }) => {
                 onChange={({ target }) => setNewTaskContent(target.value)}
                 autoFocus
             />
-            <button className="form__button form__button--add">Dodaj zadanie</button>
+            <button className="form__button">Dodaj zadanie</button>
         </form>
     )
 };

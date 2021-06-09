@@ -18,27 +18,24 @@
 }
 
 .form__button {
-    cursor: pointer;
     display: flex;
     align-content: center;
+    justify-content: center;
     color: #fff;
+    background-color: teal;
     border: none;
     padding: 5px;
-}
-
-.form__button--add {
-    background-color: teal;
     padding: 10px;
     margin: 10px;
     transition: background 0.5s, transform 1s;
 }
 
-.form__button--add:hover {
+.form__button:hover {
     background-color: hsl(180, 100%, 35%);
     transform: scale(1.05);
 }
 
-.form__button--add:active {
+.form__button:active {
     background-color: hsl(180, 80%, 45%);
     box-shadow: inset 1px 1px 2px darkgrey;
 }
