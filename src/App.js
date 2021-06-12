@@ -8,6 +8,7 @@ import Container from "./Container";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
+  
   const [tasks, setTasks] = useState([
     { id: 1, content: "task1", done: false },
     { id: 2, content: "task2", done: true },
