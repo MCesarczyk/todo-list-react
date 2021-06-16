@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Form from "./Form";
+import Switcher from "./Switcher";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
@@ -9,8 +10,9 @@ import Container from "./Container";
 function App() {
   const [langId, setLangId] = useState(0);
 
-  const languagePack = [
+  const languages = [
     {
+      key: "PL",
       headerTitle: "Lista zadań",
       sectionTitle: "Dodaj nowe zadanie",
       tasksSectionTitle: "Lista zadań",
@@ -21,6 +23,7 @@ function App() {
       toggleButtonInnerTextVisible: "Ukryj ukończone"
     },
     {
+      key: "EN",
       headerTitle: "To-do list",
       sectionTitle: "Add new task",
       tasksSectionTitle: "List of tasks",
@@ -85,19 +88,22 @@ function App() {
 
   return (
     <Container>
-      <Header title={languagePack[langId].headerTitle} />
+      <Header title={languages[langId].headerTitle} />
       <Section
-        title={languagePack[langId].sectionTitle}
+        title={languages[langId].sectionTitle}
         body={
           <Form
             addNewTask={addNewTask}
-            inputPlaceholder={languagePack[langId].inputPlaceholder}
-            formButtonInnerText={languagePack[langId].formButtonInnerText}
+            inputPlaceholder={languages[langId].inputPlaceholder}
+            formButtonInnerText={languages[langId].formButtonInnerText}
           />
+        }
+        extraHeaderContent={
+          <Switcher languages={languages}/>
         }
       />
       <Section
-        title={languagePack[langId].tasksSectionTitle}
+        title={languages[langId].tasksSectionTitle}
         body={
           <Tasks
             tasks={tasks}
@@ -112,9 +118,9 @@ function App() {
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
             setAllDone={setAllDone}
-            setDoneButtonInnerText={languagePack[langId].setDoneButtonInnerText}
-            toggleButtonInnerTextVisible={languagePack[langId].toggleButtonInnerTextVisible}
-            toggleButtonInnerTextHidden={languagePack[langId].toggleButtonInnerTextHidden}
+            setDoneButtonInnerText={languages[langId].setDoneButtonInnerText}
+            toggleButtonInnerTextVisible={languages[langId].toggleButtonInnerTextVisible}
+            toggleButtonInnerTextHidden={languages[langId].toggleButtonInnerTextHidden}
           />
         }
       />
