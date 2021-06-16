@@ -7,7 +7,7 @@ import Header from './Header';
 import Container from "./Container";
 
 function App() {
-  const [langId, setLangId] = useState(1);
+  const [langId, setLangId] = useState(0);
 
   const languagePack = [
     {
