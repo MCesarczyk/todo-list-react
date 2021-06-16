@@ -1,7 +1,7 @@
-const Switcher = ({ languages }) => (
+const Switcher = ({ languages, changeLanguage }) => (
 <div>
     {languages.map(language => (
-        <button>{language.key}</button>
+        <button key={language.key} onClick={() => changeLanguage(language.key)} >{language.key}</button>
     ))}
 </div>
 );

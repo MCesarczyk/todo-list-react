@@ -10,18 +10,11 @@ import Container from "./Container";
 function App() {
   const [langId, setLangId] = useState(0);
 
+  const changeLanguage = (key) => {
+    setLangId(languages.findIndex(language => language.key === key));
+  };
+
   const languages = [
-    {
-      key: "PL",
-      headerTitle: "Lista zadań",
-      sectionTitle: "Dodaj nowe zadanie",
-      tasksSectionTitle: "Lista zadań",
-      inputPlaceholder: "Co jest do zrobienia?",
-      formButtonInnerText: "Dodaj zadanie",
-      setDoneButtonInnerText: "Ukończ wszystkie",
-      toggleButtonInnerTextHidden: "Pokaż ukończone",
-      toggleButtonInnerTextVisible: "Ukryj ukończone"
-    },
     {
       key: "EN",
       headerTitle: "To-do list",
@@ -32,6 +25,17 @@ function App() {
       setDoneButtonInnerText: "Finish all",
       toggleButtonInnerTextHidden: "Show done",
       toggleButtonInnerTextVisible: "Hide done"
+    },
+    {
+      key: "PL",
+      headerTitle: "Lista zadań",
+      sectionTitle: "Dodaj nowe zadanie",
+      tasksSectionTitle: "Lista zadań",
+      inputPlaceholder: "Co jest do zrobienia?",
+      formButtonInnerText: "Dodaj zadanie",
+      setDoneButtonInnerText: "Ukończ wszystkie",
+      toggleButtonInnerTextHidden: "Pokaż ukończone",
+      toggleButtonInnerTextVisible: "Ukryj ukończone"
     }
   ];
 
@@ -99,7 +103,10 @@ function App() {
           />
         }
         extraHeaderContent={
-          <Switcher languages={languages}/>
+          <Switcher
+            languages={languages}
+            changeLanguage={changeLanguage}
+          />
         }
       />
       <Section
