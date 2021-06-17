@@ -12,7 +12,10 @@ const Buttons = ({
     <div className="buttons__element">
         {tasks.length > 0 && (
             <>
-                <button onClick={toggleHideDone} className="buttons__button">
+                <button
+                    onClick={toggleHideDone}
+                    className="buttons__button"
+                >
                     {hideDone ? toggleButtonInnerTextHidden : toggleButtonInnerTextVisible}
                 </button>
                 <button
