@@ -6,6 +6,7 @@ import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from './Header';
 import Container from "./Container";
+import languages from "./languages";
 
 function App() {
   const [langId, setLangId] = useState(localStorage.getItem("langId"));
@@ -13,31 +14,6 @@ function App() {
   const changeLanguage = (key) => {
     setLangId(languages.findIndex(language => language.key === key));
   };
-
-  const languages = [
-    {
-      key: "EN",
-      headerTitle: "To-do list",
-      sectionTitle: "Add new task",
-      tasksSectionTitle: "List of tasks",
-      inputPlaceholder: "What are you going to do?",
-      formButtonInnerText: "Add task",
-      setDoneButtonInnerText: "Finish all",
-      toggleButtonInnerTextHidden: "Show done",
-      toggleButtonInnerTextVisible: "Hide done"
-    },
-    {
-      key: "PL",
-      headerTitle: "Lista zadań",
-      sectionTitle: "Dodaj nowe zadanie",
-      tasksSectionTitle: "Lista zadań",
-      inputPlaceholder: "Co jest do zrobienia?",
-      formButtonInnerText: "Dodaj zadanie",
-      setDoneButtonInnerText: "Ukończ wszystkie",
-      toggleButtonInnerTextHidden: "Pokaż ukończone",
-      toggleButtonInnerTextVisible: "Ukryj ukończone"
-    }
-  ];
 
   const [hideDone, setHideDone] = useState(false);
 
