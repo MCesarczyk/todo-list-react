@@ -8,7 +8,7 @@ import Header from './Header';
 import Container from "./Container";
 
 function App() {
-  const [langId, setLangId] = useState(0);
+  const [langId, setLangId] = useState(localStorage.getItem("langId"));
 
   const changeLanguage = (key) => {
     setLangId(languages.findIndex(language => language.key === key));
@@ -52,6 +52,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("langId", langId);
   });
 
   const toggleHideDone = () => {
