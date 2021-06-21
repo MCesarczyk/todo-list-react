@@ -9,7 +9,7 @@ import Container from "./Container";
 import languages from "./languages";
 
 function App() {
-  const [langId, setLangId] = useState(localStorage.getItem("langId"));
+  const [langId, setLangId] = useState(localStorage.getItem("langId") || 0);
 
   const changeLanguage = (key) => {
     setLangId(languages.findIndex(language => language.key === key));
@@ -28,8 +28,11 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  useEffect(() => {
     localStorage.setItem("langId", langId);
-  });
+  }, [langId]);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
