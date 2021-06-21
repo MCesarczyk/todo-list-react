@@ -18,7 +18,15 @@ export const ListItem = styled.li`
     border-width: 0px 0px 1px 0px;
     border-color: #ddd;
 
-    ${({hidden}) => hidden && css`
+    ${({ hidden }) => hidden && css`
         display: none;
+    `}
+`;
+
+export const TaskContent = styled.span`
+    word-break: break-all;
+
+    ${({ done }) => done && css`
+        text-decoration: line-through;
     `}
 `;
