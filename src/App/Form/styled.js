@@ -1,23 +1,23 @@
-.form {
+import styled from "styled-components";
+
+export const FormComponent = styled.form`
     background-color: #fff;
     padding: 10px;
     display: flex;
-}
 
-@media (max-width: 768px) {
-    .form {
+    @media (max-width: 768px) {
         flex-direction: column;
     }
-}
+`;
 
-.form__input {
+export const FormInput = styled.input`
     border: solid 1px #ddd;
     padding: 10px;
     flex-grow: 1;
     margin: 10px;
-}
+`;
 
-.form__button {
+export const Button = styled.button`
     display: flex;
     align-content: center;
     justify-content: center;
@@ -28,14 +28,14 @@
     padding: 10px;
     margin: 10px;
     transition: background 0.5s, transform 1s;
-}
 
-.form__button:hover {
-    background-color: hsl(180, 100%, 35%);
-    transform: scale(1.05);
-}
+    &:hover {
+        background-color: hsl(180, 100%, 35%);
+        transform: scale(1.05);
+    }
 
-.form__button:active {
-    background-color: hsl(180, 80%, 45%);
-    box-shadow: inset 1px 1px 2px darkgrey;
-}
+    &:active {
+        background-color: hsl(180, 80%, 45%);
+        box-shadow: inset 1px 1px 2px darkgrey;
+    }
+`;
