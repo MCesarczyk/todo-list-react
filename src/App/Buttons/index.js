@@ -1,4 +1,4 @@
-import "./style.css";
+import { Element, Button } from "./styled";
 
 const Buttons = ({
     tasks,
@@ -9,25 +9,21 @@ const Buttons = ({
     toggleButtonInnerTextHidden,
     toggleButtonInnerTextVisible
 }) => (
-    <div className="buttons__element">
+    <Element>
         {tasks.length > 0 && (
             <>
-                <button
-                    onClick={toggleHideDone}
-                    className="buttons__button"
-                >
+                <Button onClick={toggleHideDone}>
                     {hideDone ? toggleButtonInnerTextHidden : toggleButtonInnerTextVisible}
-                </button>
-                <button
+                </Button>
+                <Button
                     onClick={setAllDone}
-                    className="buttons__button"
                     disabled={tasks.every(({ done }) => done)}
                 >
                     {setDoneButtonInnerText}
-                </button>
+                </Button>
             </>
         )}
-    </div>
+    </Element>
 
 );
 
