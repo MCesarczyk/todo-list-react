@@ -1,8 +1,10 @@
-.section {
-    margin-bottom: 10px;
-}
+import styled from "styled-components";
 
-.section__headerContainer {
+export const SectionContainer = styled.section`
+    margin-bottom: 10px;
+`;
+
+export const HeaderContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 10px;
@@ -10,19 +12,17 @@
     background-color: #fff;
     padding-right: 10px;
     margin: 0 0 1px 0;
-}
 
-@media (max-width:620px) {
-    .section__headerContainer {
+    @media (max-width:620px) {
         grid-template-columns: 1fr;
         justify-content: center;
     }
-}
+`;
 
-.section__header {
+export const Header = styled.h2`
     background-color: #fff;
     padding: 15px;
     font-weight: 700;
     font-size: 20px;
     margin: 0 0 1px 0;
-}
+`;
