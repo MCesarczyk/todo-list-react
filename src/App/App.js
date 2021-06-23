@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTasks } from './useTasks';
 import { useLanguage } from './useLanguage';
 import Form from "./Form";
@@ -18,7 +18,11 @@ function App() {
     setHideDone(hideDone => !hideDone);
   };
 
-  const { langId, languages, changeLanguage, } = useLanguage();
+  const { langId, setLangId } = useLanguage();
+
+  const changeLanguage = (key) => {
+    setLangId(languages.findIndex(language => language.key === key));
+  };
 
   const {
     tasks,
