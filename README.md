@@ -17,7 +17,7 @@ https://mcesarczyk.github.io/todo-list-react/
 - JS/ES6+
 - BEM
 - Immutability
-- React.js (useState, useEffect)
+- React.js (useState, useEffect, useRef, custom hooks)
 - localStorage
 
 ## Short description:
@@ -28,25 +28,29 @@ With this app You're able to:
 - hide done tasks
 - change interface language
 
+Additionally, the app automatically saves content and state of wtitten down tasks as well as chosen laguage in local storage.
+
 ## How to use this app:
 
 1. To add task write its content and click "Add task" button or simply click Enter.
 <img src="%PUBLIC_URL%/../src/images/adding_task.gif" alt="to-do-list demo animation" width=500px />
 
-2. If you want to mark task as done click on green field on the list. In the same way you can uncheck chosen tasks.
+1. If you want to mark task as done click on green field on the list. In the same way you can uncheck chosen tasks.
 <img src="%PUBLIC_URL%/../src/images/marking_done.gif" alt="to-do-list demo animation" width=500px />
 
-3. If you want to hide all done tasks clisk on button "Hide done". Description on button will now change to "Show done". To restore tasks, click this button again.
+1. If you want to hide all done tasks clisk on button "Hide done". Description on button will now change to "Show done". To restore tasks, click this button again.
 <img src="%PUBLIC_URL%/../src/images/toggling_done_visibility.gif" alt="to-do-list demo animation" width=500px />
 
-4. When you done all task and want to check them, click on "Finish all". Please notice that button will now become inactive, but if you uncheck any task, button will become active again.
+1. When you done all task and want to check them, click on "Finish all". Please notice that button will now become inactive, but if you uncheck any task, button will become active again.
 <img src="%PUBLIC_URL%/../src/images/finishing_all.gif" alt="to-do-list demo animation" width=500px />
 
-5. To remove single task click on red button with trash bin icon on right. When you remove all task buttons above list will disappear.
+1. To remove single task click on red button with trash bin icon on right. When you remove all task buttons above list will disappear.
 <img src="%PUBLIC_URL%/../src/images/deleting_single_tasks.gif" alt="to-do-list demo animation" width=500px />
 
-6. If you would like to change aplication language to polish, you can do it by clicking button at the top of a form with abreviation "PL". To switch back to english use proper button marked with "EN".
+1. If you would like to change aplication language to polish, you can do it by clicking button at the top of a form with abreviation "PL". To switch back to english use proper button marked with "EN".
 <img src="%PUBLIC_URL%/../src/images/changing_language.gif" alt="to-do-list demo animation" width=500px />
+
+1. When you will open the app with the same browser your tasks and language settings will be there.
 
 
 # Getting Started with Create React App
