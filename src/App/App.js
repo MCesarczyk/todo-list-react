@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTasks } from './useTasks';
+import { useLanguage } from './useLanguage';
 import Form from "./Form";
 import Switcher from "./Switcher";
 import Tasks from "./Tasks";
@@ -10,21 +11,14 @@ import Container from "./Container";
 import languages from "./languages";
 
 function App() {
-  const [langId, setLangId] = useState(localStorage.getItem("langId") || 0);
-
-  useEffect(() => {
-    localStorage.setItem("langId", langId);
-  }, [langId]);
-
-  const changeLanguage = (key) => {
-    setLangId(languages.findIndex(language => language.key === key));
-  };
 
   const [hideDone, setHideDone] = useState(false);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
+
+  const { langId, languages, changeLanguage, } = useLanguage();
 
   const {
     tasks,
