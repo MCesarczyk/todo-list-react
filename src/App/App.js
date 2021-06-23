@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTasks } from './useTasks';
 import Form from "./Form";
 import Switcher from "./Switcher";
 import Tasks from "./Tasks";
@@ -11,64 +12,27 @@ import languages from "./languages";
 function App() {
   const [langId, setLangId] = useState(localStorage.getItem("langId") || 0);
 
+  useEffect(() => {
+    localStorage.setItem("langId", langId);
+  }, [langId]);
+
   const changeLanguage = (key) => {
     setLangId(languages.findIndex(language => language.key === key));
   };
 
   const [hideDone, setHideDone] = useState(false);
 
-  const [tasks, setTasks] = useState(
-    JSON.parse(localStorage.getItem("tasks")
-    ) ||
-    [
-      { id: 1, content: "task1", done: false },
-      { id: 2, content: "task2", done: true },
-    ]
-  );
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
-
-  useEffect(() => {
-    localStorage.setItem("langId", langId);
-  }, [langId]);
-
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
 
-  const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id));
-  };
-
-  const toggleTaskDone = (id) => {
-    setTasks(tasks => tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, done: !task.done };
-      }
-
-      return task;
-    }))
-  };
-
-  const setAllDone = () => {
-    setTasks(tasks => tasks.map(task => ({
-      ...task,
-      done: true,
-    })));
-  };
-
-  const addNewTask = (content) => {
-    setTasks(tasks => [
-      ...tasks,
-      {
-        content,
-        done: false,
-        id: tasks.length ? tasks[tasks.length - 1].id + 1 : 1,
-      },
-    ])
-  };
+  const {
+    tasks,
+    toggleTaskDone,
+    removeTask,
+    setAllDone,
+    addNewTask,
+  } = useTasks();
 
   return (
     <Container>
