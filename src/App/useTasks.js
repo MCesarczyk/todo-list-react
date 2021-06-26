@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 export const useTasks = () => {
     const [tasks, setTasks] = useState(
-        JSON.parse(localStorage.getItem("tasks")
-        ) ||
+        JSON.parse(localStorage.getItem("tasks"))
+        ||
         [
             { id: 1, content: "task1", done: false },
             { id: 2, content: "task2", done: true },
