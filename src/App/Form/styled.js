@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormComponent = styled.form`
-    background-color: #fff;
+    background-color: ${({theme}) => theme.color.background};
     padding: 10px;
     display: flex;
 
@@ -21,8 +21,8 @@ export const Button = styled.button`
     display: flex;
     align-content: center;
     justify-content: center;
-    color: #fff;
-    background-color: teal;
+    color: ${({ theme }) => theme.color.fontLight};
+    background-color: ${({ theme }) => theme.color.primary};
     border: none;
     padding: 5px;
     padding: 10px;

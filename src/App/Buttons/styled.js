@@ -11,9 +11,9 @@ export const Element = styled.div`
 `;
 
 export const Button = styled.button`
-    color: hsl(180, 100%, 25%);
+    color: ${({ theme }) => theme.color.primary};
     font-weight: 400;
-    background-color: #fff;
+    background-color: transparent;
     border: none;
     transition: 0.5s;
 

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const TaskList = styled.ul`
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.color.background};
     padding: 15px;
     list-style-type: none;
     width: 100%;
@@ -36,7 +36,7 @@ export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-content: center;
-    color: #fff;
+    color: ${({ theme }) => theme.color.fontLight};
     border: none;
     padding: 5px;
     width: 28px;
