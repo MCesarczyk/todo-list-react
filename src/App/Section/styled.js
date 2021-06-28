@@ -13,7 +13,7 @@ export const HeaderContainer = styled.div`
     padding-right: 10px;
     margin: 0 0 1px 0;
 
-    @media (max-width:620px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         grid-template-columns: 1fr;
         justify-content: center;
     }

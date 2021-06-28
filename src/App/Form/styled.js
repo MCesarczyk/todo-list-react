@@ -5,7 +5,7 @@ export const FormComponent = styled.form`
     padding: 10px;
     display: flex;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
         flex-direction: column;
     }
 `;

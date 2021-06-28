@@ -5,7 +5,7 @@ export const Element = styled.div`
     gap: 10px;
     grid-template-columns: auto auto;
     
-    @media (max-width:620px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
         grid-template-columns: 1fr;
     }
 `;
