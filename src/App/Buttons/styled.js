@@ -18,11 +18,11 @@ export const Button = styled.button`
     transition: 0.5s;
 
     &:hover {
-        color: hsl(180, 100%, 45%);
+        filter: brightness(110%);
     }
 
     &:active {
-        color: hsl(180, 100%, 15%);
+        filter: brightness(120%);
     }
 
     &:disabled {

@@ -44,14 +44,14 @@ export const Button = styled.button`
     transition: 0.5s;
 
     ${({ toggleDone }) => toggleDone && css`
-        background-color: hsl(137, 85%, 21%);
+        background-color: forestgreen;
 
         &:hover {
-            background-color: hsl(135, 85%, 31%);
+            filter: brightness(130%);
         }
 
         &:active {
-            background-color: hsl(135, 85%, 41%);
+            filter: brightness(160%);
             box-shadow: inset 1px 1px 3px darkgrey;
         }
     `}
@@ -60,11 +60,11 @@ export const Button = styled.button`
         background-color: crimson;
 
         &:hover {
-            background-color: hsl(348, 83%, 60%);
+            filter: brightness(130%);
         }
 
         &:active {
-            background-color: hsl(348, 83%, 70%);
+            filter: brightness(160%);
             box-shadow: inset 1px 1px 3px darkgrey;
         }
     `}
