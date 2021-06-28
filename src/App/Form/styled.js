@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormComponent = styled.form`
-    background-color: ${({theme}) => theme.color.background};
+    background-color: ${({ theme }) => theme.color.background};
     padding: 10px;
     display: flex;
 
@@ -11,7 +11,7 @@ export const FormComponent = styled.form`
 `;
 
 export const FormInput = styled.input`
-    border: solid 1px #ddd;
+    border: solid 1px ${({ theme }) => theme.color.borders};
     padding: 10px;
     flex-grow: 1;
     margin: 10px;
@@ -30,12 +30,12 @@ export const Button = styled.button`
     transition: background 0.5s, transform 1s;
 
     &:hover {
-        background-color: hsl(180, 100%, 35%);
+        filter: brightness(130%);
         transform: scale(1.05);
     }
 
     &:active {
-        background-color: hsl(180, 80%, 45%);
+        filter: brightness(160%);
         box-shadow: inset 1px 1px 2px darkgrey;
     }
 `;

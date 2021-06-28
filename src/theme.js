@@ -3,6 +3,11 @@ export const theme = {
         primary: "teal",
         background: "#fff",
         fontLight: "#fff",
+        disabled: "#ccc",
+        borders: "#ddd",
+        shadows: "darkgrey",
+        toggleDone: "forestgreen",
+        remove: "crimson",
     },
     breakpoint: {
         mobileMax: "480px",

@@ -26,7 +26,7 @@ export const Button = styled.button`
     }
 
     &:disabled {
-        color: #ccc;
+        color: ${({ theme }) => theme.color.disabled};
         cursor: unset;
     }
 `;

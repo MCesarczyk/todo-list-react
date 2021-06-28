@@ -16,7 +16,7 @@ export const ListItem = styled.li`
     padding: 6px;
     border-style: solid;
     border-width: 0px 0px 1px 0px;
-    border-color: #ddd;
+    border-color: ${({ theme }) => theme.color.borders};
 
     ${({ hidden }) => hidden && css`
         display: none;
@@ -44,7 +44,7 @@ export const Button = styled.button`
     transition: 0.5s;
 
     ${({ toggleDone }) => toggleDone && css`
-        background-color: forestgreen;
+        background-color: ${({ theme }) => theme.color.toggleDone};
 
         &:hover {
             filter: brightness(130%);
@@ -52,12 +52,12 @@ export const Button = styled.button`
 
         &:active {
             filter: brightness(160%);
-            box-shadow: inset 1px 1px 3px darkgrey;
+            box-shadow: inset 1px 1px 3px ${({ theme }) => theme.color.shadows};
         }
     `}
 
     ${({ remove }) => remove && css`
-        background-color: crimson;
+        background-color: ${({ theme }) => theme.color.remove};
 
         &:hover {
             filter: brightness(130%);
@@ -65,7 +65,7 @@ export const Button = styled.button`
 
         &:active {
             filter: brightness(160%);
-            box-shadow: inset 1px 1px 3px darkgrey;
+            box-shadow: inset 1px 1px 3px ${({ theme }) => theme.color.shadows};
         }
     `}
 `;
