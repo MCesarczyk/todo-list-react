@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 export const useLanguage = () => {
 
-    const [langId, setLangId] = useState(localStorage.getItem("langId") || 0);
+    const [language, setLanguage] = useState(localStorage.getItem("language") || 0);
 
     useEffect(() => {
-        localStorage.setItem("langId", langId);
-    }, [langId]);
+        localStorage.setItem("language", language);
+    }, [language]);
 
-    return { langId, setLangId };
+    return [language, setLanguage];
 }
