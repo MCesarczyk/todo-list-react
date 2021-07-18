@@ -7,7 +7,6 @@ import Tasks from "./Tasks";
 import Buttons from "./Buttons";
 import Section from "./Section";
 import Header from './Header';
-import Container from "./Container";
 import languages from "./languages";
 
 function App() {
@@ -18,10 +17,10 @@ function App() {
     setHideDone(hideDone => !hideDone);
   };
 
-  const { langId, setLangId } = useLanguage();
+  const [ language, setLanguage ] = useLanguage();
 
   const changeLanguage = (key) => {
-    setLangId(languages.findIndex(language => language.key === key));
+    setLanguage(languages.findIndex(language => language.key === key));
   };
 
   const {
@@ -33,15 +32,15 @@ function App() {
   } = useTasks();
 
   return (
-    <Container>
-      <Header title={languages[langId].headerTitle} />
+    <main>
+      <Header title={languages[language].headerTitle} />
       <Section
-        title={languages[langId].sectionTitle}
+        title={languages[language].sectionTitle}
         body={
           <Form
             addNewTask={addNewTask}
-            inputPlaceholder={languages[langId].inputPlaceholder}
-            formButtonInnerText={languages[langId].formButtonInnerText}
+            inputPlaceholder={languages[language].inputPlaceholder}
+            formButtonInnerText={languages[language].formButtonInnerText}
           />
         }
         extraHeaderContent={
@@ -52,7 +51,7 @@ function App() {
         }
       />
       <Section
-        title={languages[langId].tasksSectionTitle}
+        title={languages[language].tasksSectionTitle}
         body={
           <Tasks
             tasks={tasks}
@@ -67,13 +66,13 @@ function App() {
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
             setAllDone={setAllDone}
-            setDoneButtonInnerText={languages[langId].setDoneButtonInnerText}
-            toggleButtonInnerTextVisible={languages[langId].toggleButtonInnerTextVisible}
-            toggleButtonInnerTextHidden={languages[langId].toggleButtonInnerTextHidden}
+            setDoneButtonInnerText={languages[language].setDoneButtonInnerText}
+            toggleButtonInnerTextVisible={languages[language].toggleButtonInnerTextVisible}
+            toggleButtonInnerTextHidden={languages[language].toggleButtonInnerTextHidden}
           />
         }
       />
-    </Container>
+    </main>
   );
 }
 
