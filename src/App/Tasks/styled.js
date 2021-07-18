@@ -17,10 +17,6 @@ export const ListItem = styled.li`
     border-style: solid;
     border-width: 0px 0px 1px 0px;
     border-color: ${({ theme }) => theme.color.borders};
-
-    ${({ hidden }) => hidden && css`
-        display: none;
-    `}
 `;
 
 export const TaskContent = styled.span`
