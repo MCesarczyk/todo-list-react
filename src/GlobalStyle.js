@@ -15,6 +15,7 @@ body {
   max-width: 1024px;
   min-width: 320px;
   margin: 0 auto;
+  padding: 10px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14 px;
 }
