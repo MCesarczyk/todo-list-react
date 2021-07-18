@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 
 export const useTasks = () => {
+    const initialTasks = [
+        { id: 1, content: "task1", done: false },
+        { id: 2, content: "task2", done: true },
+    ];
+
     const [tasks, setTasks] = useState(
-        JSON.parse(localStorage.getItem("tasks"))
-        ||
-        [
-            { id: 1, content: "task1", done: false },
-            { id: 2, content: "task2", done: true },
-        ]
-    );
+        JSON.parse(localStorage.getItem("tasks"))||initialTasks);
 
     useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(tasks));
