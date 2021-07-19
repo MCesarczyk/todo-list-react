@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTasks } from './useTasks';
-import { useLanguage } from './useLanguage';
+import { useLocalStorageState } from './useLocalStorageState';
 import Form from "./Form";
 import Switcher from "./Switcher";
 import Tasks from "./Tasks";
@@ -17,7 +17,7 @@ function App() {
     setHideDone(hideDone => !hideDone);
   };
 
-  const [ language, setLanguage ] = useLanguage();
+  const [ language, setLanguage ] = useLocalStorageState("language", 0);
 
   const changeLanguage = (key) => {
     setLanguage(languages.findIndex(language => language.key === key));
