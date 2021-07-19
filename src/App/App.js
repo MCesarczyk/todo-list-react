@@ -10,14 +10,13 @@ import Header from './Header';
 import languages from "./languages";
 
 function App() {
-
   const [hideDone, setHideDone] = useState(false);
 
   const toggleHideDone = () => {
     setHideDone(hideDone => !hideDone);
   };
 
-  const [ language, setLanguage ] = useLocalStorageState("language", 0);
+  const [language, setLanguage] = useLocalStorageState("language", 0);
 
   const changeLanguage = (key) => {
     setLanguage(languages.findIndex(language => language.key === key));
