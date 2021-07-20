@@ -22,6 +22,8 @@ function App() {
     setLanguage(languages.findIndex(language => language.key === key));
   };
 
+  document.title = languages[language].headerTitle;
+
   const {
     tasks,
     toggleTaskDone,
