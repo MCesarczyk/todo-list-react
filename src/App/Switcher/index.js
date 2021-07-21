@@ -1,14 +1,22 @@
-const Switcher = ({ languages, changeLanguage }) => (
-    <div>
-        {languages.map(language => (
-            <button
-                key={language.key}
-                onClick={() => changeLanguage(language.key)}
-            >
-                {language.key}
-            </button>
-        ))}
-    </div>
-);
+const Switcher = ({ languages, setLanguage }) => {
+
+    const onLanguageChange = ({ target }) => {
+        setLanguage(target.value);
+    };
+
+    return (
+        <div>
+            {Object.keys(languages).map((key) => (
+                <button
+                    key={key}
+                    value={key}
+                    onClick={onLanguageChange}
+                >
+                    {key}
+                </button>
+            ))}
+        </div>
+    )
+};
 
 export default Switcher;

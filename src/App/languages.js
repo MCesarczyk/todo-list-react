@@ -1,6 +1,5 @@
-const languages = [
-  {
-    key: "EN",
+const languages = {
+  EN: {
     headerTitle: "To-do list",
     sectionTitle: "Add new task",
     tasksSectionTitle: "List of tasks",
@@ -10,8 +9,7 @@ const languages = [
     toggleButtonInnerTextHidden: "Show done",
     toggleButtonInnerTextVisible: "Hide done"
   },
-  {
-    key: "PL",
+  PL: {
     headerTitle: "Lista zadań",
     sectionTitle: "Dodaj nowe zadanie",
     tasksSectionTitle: "Lista zadań",
@@ -21,6 +19,6 @@ const languages = [
     toggleButtonInnerTextHidden: "Pokaż ukończone",
     toggleButtonInnerTextVisible: "Ukryj ukończone"
   }
-];
+};
 
 export default languages;

@@ -16,11 +16,7 @@ function App() {
     setHideDone(hideDone => !hideDone);
   };
 
-  const [language, setLanguage] = useLocalStorageState("language", 0);
-
-  const changeLanguage = (key) => {
-    setLanguage(languages.findIndex(language => language.key === key));
-  };
+  const [language, setLanguage] = useLocalStorageState("language", "EN");
 
   document.title = languages[language].headerTitle;
 
@@ -47,7 +43,8 @@ function App() {
         extraHeaderContent={
           <Switcher
             languages={languages}
-            changeLanguage={changeLanguage}
+            language={language}
+            setLanguage={setLanguage}
           />
         }
       />
