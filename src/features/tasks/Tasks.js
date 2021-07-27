@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux';
 import { useTasks } from '../../App/useTasks';
 import { useLocalStorageState } from '../../App/useLocalStorageState';
 import Form from "./Form";
@@ -8,20 +7,15 @@ import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from '../../common/Header';
 import languages from "../languages/languages";
-import { selectTasks } from './tasksSlice';
 
 function Tasks() {
-  const { tasks } = useSelector(selectTasks);
-
   const [language, setLanguage] = useLocalStorageState("language", "EN");
 
   document.title = languages[language].headerTitle;
 
   const {
-    toggleTaskDone,
     removeTask,
     setAllDone,
-    addNewTask,
   } = useTasks();
 
   return (
@@ -31,7 +25,6 @@ function Tasks() {
         title={languages[language].sectionTitle}
         body={
           <Form
-            addNewTask={addNewTask}
             inputPlaceholder={languages[language].inputPlaceholder}
             formButtonInnerText={languages[language].formButtonInnerText}
           />
@@ -49,7 +42,6 @@ function Tasks() {
         body={
           <TaskList
             removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
           />
         }
         extraHeaderContent={
