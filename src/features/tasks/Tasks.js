@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { useTasks } from './useTasks';
-import { useLocalStorageState } from './useLocalStorageState';
+import { useTasks } from '../../App/useTasks';
+import { useLocalStorageState } from '../../App/useLocalStorageState';
 import Form from "./Form";
-import Switcher from "./Switcher";
-import Tasks from "./Tasks";
+import Switcher from "../languages/Switcher";
+import TaskList from "./TaskList";
 import Buttons from "./Buttons";
-import Section from "./Section";
-import Header from './Header';
-import languages from "./languages";
+import Section from "../../common/Section";
+import Header from '../../common/Header';
+import languages from "../languages/languages";
 
-function App() {
+function Tasks() {
   const [hideDone, setHideDone] = useState(false);
 
   const toggleHideDone = () => {
@@ -51,7 +51,7 @@ function App() {
       <Section
         title={languages[language].tasksSectionTitle}
         body={
-          <Tasks
+          <TaskList
             tasks={tasks}
             hideDone={hideDone}
             removeTask={removeTask}
@@ -74,4 +74,4 @@ function App() {
   );
 }
 
-export default App;
+export default Tasks;

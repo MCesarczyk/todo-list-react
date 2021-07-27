@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const TaskList = styled.ul`
+export const StyledTaskList = styled.ul`
     background-color: ${({ theme }) => theme.color.background};
     padding: 15px;
     list-style-type: none;
