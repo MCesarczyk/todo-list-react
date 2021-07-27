@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useTasks } from '../../App/useTasks';
 import { useLocalStorageState } from '../../App/useLocalStorageState';
 import Form from "./Form";
@@ -8,20 +8,16 @@ import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from '../../common/Header';
 import languages from "../languages/languages";
+import { selectTasks } from './tasksSlice';
 
 function Tasks() {
-  const [hideDone, setHideDone] = useState(false);
-
-  const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone);
-  };
+  const { tasks } = useSelector(selectTasks);
 
   const [language, setLanguage] = useLocalStorageState("language", "EN");
 
   document.title = languages[language].headerTitle;
 
   const {
-    tasks,
     toggleTaskDone,
     removeTask,
     setAllDone,
@@ -52,17 +48,12 @@ function Tasks() {
         title={languages[language].tasksSectionTitle}
         body={
           <TaskList
-            tasks={tasks}
-            hideDone={hideDone}
             removeTask={removeTask}
             toggleTaskDone={toggleTaskDone}
           />
         }
         extraHeaderContent={
           <Buttons
-            tasks={tasks}
-            hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
             setAllDone={setAllDone}
             setDoneButtonInnerText={languages[language].setDoneButtonInnerText}
             toggleButtonInnerTextVisible={languages[language].toggleButtonInnerTextVisible}
