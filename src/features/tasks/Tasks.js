@@ -14,7 +14,6 @@ function Tasks() {
   document.title = languages[language].headerTitle;
 
   const {
-    removeTask,
     setAllDone,
   } = useTasks();
 
@@ -40,9 +39,7 @@ function Tasks() {
       <Section
         title={languages[language].tasksSectionTitle}
         body={
-          <TaskList
-            removeTask={removeTask}
-          />
+          <TaskList />
         }
         extraHeaderContent={
           <Buttons
