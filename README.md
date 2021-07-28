@@ -19,6 +19,7 @@ https://mcesarczyk.github.io/todo-list-react/
 - Immutability
 - React.js (useState, useEffect, useRef, custom hooks)
 - localStorage
+- Redux
 
 ## Short description:
 With this app You're able to:
@@ -28,7 +29,8 @@ With this app You're able to:
 - hide done tasks
 - change interface language
 
-Additionally, the app automatically saves content and state of wtitten down tasks as well as chosen laguage in local storage.
+~~Additionally, the app automatically saves content and state of wtitten down tasks as well as chosen laguage in local storage.~~  
+*this feature will be available again after implementation of local storage handling with Saga
 
 ## How to use this app:
 
