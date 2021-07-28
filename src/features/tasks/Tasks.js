@@ -1,4 +1,3 @@
-import { useTasks } from '../../App/useTasks';
 import { useLocalStorageState } from '../../App/useLocalStorageState';
 import Form from "./Form";
 import Switcher from "../languages/Switcher";
@@ -12,10 +11,6 @@ function Tasks() {
   const [language, setLanguage] = useLocalStorageState("language", "EN");
 
   document.title = languages[language].headerTitle;
-
-  const {
-    setAllDone,
-  } = useTasks();
 
   return (
     <main>
@@ -43,7 +38,6 @@ function Tasks() {
         }
         extraHeaderContent={
           <Buttons
-            setAllDone={setAllDone}
             setDoneButtonInnerText={languages[language].setDoneButtonInnerText}
             toggleButtonInnerTextVisible={languages[language].toggleButtonInnerTextVisible}
             toggleButtonInnerTextHidden={languages[language].toggleButtonInnerTextHidden}
