@@ -1,4 +1,4 @@
-import { useLocalStorageState } from '../../App/useLocalStorageState';
+import { useLocalStorageState } from '../../useLocalStorageState';
 import Form from "./Form";
 import Switcher from "../languages/Switcher";
 import TaskList from "./TaskList";
