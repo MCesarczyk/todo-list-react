@@ -1,4 +1,4 @@
-const languages = {
+const descriptions = {
   EN: {
     headerTitle: "To-do list",
     sectionTitle: "Add new task",
@@ -21,4 +21,4 @@ const languages = {
   }
 };
 
-export default languages;
+export default descriptions;
