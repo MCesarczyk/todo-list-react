@@ -25,10 +25,7 @@ function Tasks() {
           />
         }
         extraHeaderContent={
-          <Switcher
-            descriptions={descriptions}
-            language={language}
-          />
+          <Switcher descriptions={descriptions} />
         }
       />
       <Section
