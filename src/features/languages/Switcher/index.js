@@ -1,18 +1,17 @@
-import { Element, Button } from "./styled";
+import { useDispatch } from "react-redux";
+import { changeLanguage } from "../languageSlice";
+import { Button } from "./styled";
 
-const Switcher = ({ languages, setLanguage }) => {
-
-    const onLanguageChange = ({ target }) => {
-        setLanguage(target.value);
-    };
+const Switcher = ({ descriptions }) => {
+    const dispatch = useDispatch();
 
     return (
         <div>
-            {Object.keys(languages).map((key) => (
+            {Object.keys(descriptions).map((key) => (
                 <Button
                     key={key}
                     value={key}
-                    onClick={onLanguageChange}
+                    onClick={() => dispatch(changeLanguage(key))}
                 >
                     {key}
                 </Button>

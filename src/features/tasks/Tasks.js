@@ -1,46 +1,46 @@
-import { useLocalStorageState } from '../../useLocalStorageState';
 import Form from "./Form";
 import Switcher from "../languages/Switcher";
 import TaskList from "./TaskList";
 import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from '../../common/Header';
-import languages from "../languages/languages";
+import descriptions from "../languages/descriptions";
+import { useSelector } from "react-redux";
+import { selectLanguage } from "../languages/languageSlice";
 
 function Tasks() {
-  const [language, setLanguage] = useLocalStorageState("language", "EN");
+  const language = useSelector(selectLanguage);
 
-  document.title = languages[language].headerTitle;
+  document.title = descriptions[language].headerTitle;
 
   return (
     <main>
-      <Header title={languages[language].headerTitle} />
+      <Header title={descriptions[language].headerTitle} />
       <Section
-        title={languages[language].sectionTitle}
+        title={descriptions[language].sectionTitle}
         body={
           <Form
-            inputPlaceholder={languages[language].inputPlaceholder}
-            formButtonInnerText={languages[language].formButtonInnerText}
+            inputPlaceholder={descriptions[language].inputPlaceholder}
+            formButtonInnerText={descriptions[language].formButtonInnerText}
           />
         }
         extraHeaderContent={
           <Switcher
-            languages={languages}
+            descriptions={descriptions}
             language={language}
-            setLanguage={setLanguage}
           />
         }
       />
       <Section
-        title={languages[language].tasksSectionTitle}
+        title={descriptions[language].tasksSectionTitle}
         body={
           <TaskList />
         }
         extraHeaderContent={
           <Buttons
-            setDoneButtonInnerText={languages[language].setDoneButtonInnerText}
-            toggleButtonInnerTextVisible={languages[language].toggleButtonInnerTextVisible}
-            toggleButtonInnerTextHidden={languages[language].toggleButtonInnerTextHidden}
+            setDoneButtonInnerText={descriptions[language].setDoneButtonInnerText}
+            toggleButtonInnerTextVisible={descriptions[language].toggleButtonInnerTextVisible}
+            toggleButtonInnerTextHidden={descriptions[language].toggleButtonInnerTextHidden}
           />
         }
       />
