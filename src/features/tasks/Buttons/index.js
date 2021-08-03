@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { selectTasks, toggleHideDone, setAllDone, selectHideDone } from "../tasksSlice";
-import { Element, Button } from "./styled";
+import { Element, Button } from "../styled";
 
 const Buttons = ({
     setDoneButtonInnerText,

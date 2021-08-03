@@ -5,11 +5,15 @@ import Buttons from "./Buttons";
 import Section from "../../common/Section";
 import Header from '../../common/Header';
 import descriptions from "../languages/descriptions";
-import { useSelector } from "react-redux";
-import { selectLanguage } from "../languages/languageSlice";
+import { useDispatch, useSelector } from "react-redux";
+import languageSlice, { selectLanguage } from "../languages/languageSlice";
+import { Button } from "./styled";
+import { fetchExampleTasks } from "./tasksSlice";
 
 function Tasks() {
   const language = useSelector(selectLanguage);
+
+  const dispatch = useDispatch();
 
   document.title = descriptions[language].headerTitle;
 
@@ -25,7 +29,14 @@ function Tasks() {
           />
         }
         extraHeaderContent={
-          <Switcher descriptions={descriptions} />
+          <>
+            <div>
+              <Button onClick={() => dispatch(fetchExampleTasks())}>
+                {descriptions[language].getExampleTasksButtonText}
+              </Button>
+            </div>
+            <Switcher descriptions={descriptions} />
+          </>
         }
       />
       <Section
