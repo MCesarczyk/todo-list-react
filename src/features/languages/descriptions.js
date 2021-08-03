@@ -7,7 +7,8 @@ const descriptions = {
     formButtonInnerText: "Add task",
     setDoneButtonInnerText: "Finish all",
     toggleButtonInnerTextHidden: "Show done",
-    toggleButtonInnerTextVisible: "Hide done"
+    toggleButtonInnerTextVisible: "Hide done",
+    getExampleTasksButtonText: "Get example tasks"
   },
   PL: {
     headerTitle: "Lista zadań",
@@ -17,7 +18,8 @@ const descriptions = {
     formButtonInnerText: "Dodaj zadanie",
     setDoneButtonInnerText: "Ukończ wszystkie",
     toggleButtonInnerTextHidden: "Pokaż ukończone",
-    toggleButtonInnerTextVisible: "Ukryj ukończone"
+    toggleButtonInnerTextVisible: "Ukryj ukończone",
+    getExampleTasksButtonText: "Pobierz przykładowe zadania"
   }
 };
 
