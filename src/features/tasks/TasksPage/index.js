@@ -1,16 +1,16 @@
 import Form from "./Form";
-import Switcher from "../languages/Switcher";
+import Switcher from "../../languages/Switcher";
 import TaskList from "./TaskList";
 import Buttons from "./Buttons";
-import Section from "../../common/Section";
-import Header from '../../common/Header';
-import descriptions from "../languages/descriptions";
+import Section from "../../../common/Section";
+import Header from '../../../common/Header';
+import descriptions from "../../languages/descriptions";
 import { useDispatch, useSelector } from "react-redux";
-import languageSlice, { selectLanguage } from "../languages/languageSlice";
+import { selectLanguage } from "../../languages/languageSlice";
 import { Button } from "./styled";
-import { fetchExampleTasks } from "./tasksSlice";
+import { fetchExampleTasks } from "../tasksSlice";
 
-function Tasks() {
+function TasksPage() {
   const language = useSelector(selectLanguage);
 
   const dispatch = useDispatch();
@@ -56,4 +56,4 @@ function Tasks() {
   );
 }
 
-export default Tasks;
+export default TasksPage;
