@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectLanguage } from "../../languages/languageSlice";
 import { Button } from "./styled";
 import { fetchExampleTasks } from "../tasksSlice";
+import Search from "./Search";
 
 function TasksPage() {
   const language = useSelector(selectLanguage);
@@ -38,6 +39,11 @@ function TasksPage() {
             <Switcher descriptions={descriptions} />
           </>
         }
+      />
+      <Section
+        title="Wyszukiwarka"
+        body={<Search />}
+        extraHeaderContent={<></>}
       />
       <Section
         title={descriptions[language].tasksSectionTitle}

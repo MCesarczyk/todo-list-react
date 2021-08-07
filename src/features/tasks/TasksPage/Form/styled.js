@@ -10,13 +10,6 @@ export const FormComponent = styled.form`
     }
 `;
 
-export const FormInput = styled.input`
-    border: solid 1px ${({ theme }) => theme.color.borders};
-    padding: 10px;
-    flex-grow: 1;
-    margin: 10px;
-`;
-
 export const Button = styled.button`
     display: flex;
     align-content: center;
