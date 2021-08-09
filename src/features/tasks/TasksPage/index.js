@@ -36,7 +36,6 @@ function TasksPage() {
                 {descriptions[language].getExampleTasksButtonText}
               </Button>
             </div>
-            <Switcher descriptions={descriptions} />
           </>
         }
       />
