@@ -6,18 +6,25 @@ import { Wrapper } from "./styled";
 const Search = () => {
     const location = useLocation();
     const history = useHistory();
-    const query = (new URLSearchParams(location.search)).get("searchQueryParamName");
 
-    const onInputChange = ({ target }) => {
-        const searchParams = new URLSearchParams(location.search);
+    const searchParams = new URLSearchParams(location.search);
+    const query = searchParams.get("searchQueryParamName");
 
-        if (target.value.trim() === "") {
-            searchParams.delete("searchQueryParamName");
+    const replaceQueryParameter = ({ value }) => {
+
+        if (value) {
+            searchParams.set("searchQueryParamName", value);
         } else {
-            searchParams.set("searchQueryParamName", target.value);
+            searchParams.delete("searchQueryParamName");
         }
 
         history.push(`${location.pathname}?${searchParams.toString()}`);
+    };
+
+    const onInputChange = ({ target }) => {
+        replaceQueryParameter({
+            value: target.value.trim() !== "" ? target.value : undefined,
+        });
     };
 
     return (
