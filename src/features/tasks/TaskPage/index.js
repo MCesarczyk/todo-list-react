@@ -4,10 +4,6 @@ import descriptions from "../../languages/descriptions";
 import { useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { getTasksById } from "../tasksSlice";
-// import { useDispatch, useSelector } from "react-redux";
-// import { selectLanguage } from "../../languages/languageSlice";
-// import { Button } from "./styled";
-// import { fetchExampleTasks } from "../tasksSlice";
 
 function TaskPage() {
   const { id } = useParams();
