@@ -22,4 +22,12 @@ body {
 
 button {
   cursor: pointer;
+};
+
+li {
+  list-style: none;
+};
+
+a {
+  text-decoration: none;
 }`;
