@@ -21,7 +21,7 @@ const App = () => {
                     </li>
                     <li>
                         <StyledNavLink to="/author">
-                        {descriptions[language].authorPageTitle}
+                            {descriptions[language].authorPageTitle}
                         </StyledNavLink>
                     </li>
                 </StyledNavBeam>
