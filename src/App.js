@@ -22,9 +22,6 @@ const App = () => (
                 <Route path="/zadania">
                     <TasksPage />
                 </Route>
-                <Route path="/zadania">
-                    <TasksPage />
-                </Route>
                 <Route path="/autor">
                     <AuthorPage />
                 </Route>

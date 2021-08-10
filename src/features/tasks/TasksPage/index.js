@@ -8,11 +8,12 @@ import descriptions from "../../languages/descriptions";
 import { useDispatch, useSelector } from "react-redux";
 import { selectLanguage } from "../../languages/languageSlice";
 import { Button } from "./styled";
-import { fetchExampleTasks } from "../tasksSlice";
+import { fetchExampleTasks, selectState } from "../tasksSlice";
 import Search from "./Search";
 
 function TasksPage() {
   const language = useSelector(selectLanguage);
+  const state = useSelector(selectState);
 
   const dispatch = useDispatch();
 
@@ -33,7 +34,8 @@ function TasksPage() {
           <>
             <div>
               <Button onClick={() => dispatch(fetchExampleTasks())}>
-                {descriptions[language].getExampleTasksButtonText}
+                {(state === "loading") ? "loading" : descriptions[language].getExampleTasksButtonText}
+                {/* {descriptions[language].getExampleTasksButtonText} */}
               </Button>
             </div>
           </>
