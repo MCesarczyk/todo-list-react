@@ -17,9 +17,12 @@ https://mcesarczyk.github.io/todo-list-react/
 - JS/ES6+
 - BEM
 - Immutability
-- React.js (useState, useEffect, useRef, custom hooks)
-- localStorage
-- Redux
+- React/toolkit (JSX, components)
+- Styled components, global style, theme provider
+- Asynchronity/hooks (useState, useEffect, useRef, custom hooks)
+- localStorage (XHR, fetch, axios)
+- React-redux (app global state handling)
+- Redux-Saga (side effects, local storage management)
 
 ## Short description:
 With this app You're able to:
@@ -27,30 +30,51 @@ With this app You're able to:
 - mark it as done individually
 - mark as done all at once
 - hide done tasks
+- view single task details
 - change interface language
+- fetching sample tasks to test functions
+- search thru tasks using simple search
+- view page containing info about author
 
-~~Additionally, the app automatically saves content and state of wtitten down tasks as well as chosen laguage in local storage.~~  
-*this feature will be available again after implementation of local storage handling with Saga
+Additionally, the app automatically saves content and state of wtitten down tasks as well as chosen laguage in local storage.
 
 ## How to use this app:
 
 1. To add task write its content and click "Add task" button or simply click Enter.
-<img src="%PUBLIC_URL%/../public/addingTask.gif" alt="to-do-list demo animation" width=500px />
+<img src="./src/addingNewTasks.gif" />
 
 1. If you want to mark task as done click on green field on the list. In the same way you can uncheck chosen tasks.
-<img src="%PUBLIC_URL%/../public/markingTaskDone.gif" alt="to-do-list demo animation" width=500px />
+<img src="./src/markingTaskDone.gif" />
 
 1. If you want to hide all done tasks clisk on button "Hide done". Description on button will now change to "Show done". To restore tasks, click this button again.
-<img src="%PUBLIC_URL%/../public/togglingVisibilityOfDoneTasks.gif" alt="to-do-list demo animation" width=500px />
+<img src="./src/togglingVisibilityOfDoneTasks.gif" />
 
 1. When you done all task and want to check them, click on "Finish all". Please notice that button will now become inactive, but if you uncheck any task, button will become active again.
-<img src="%PUBLIC_URL%/../public/markingAllDone.gif" alt="to-do-list demo animation" width=500px />
+<img src="./src/markingAllDone.gif" />
 
 1. To remove single task click on red button with trash bin icon on right. When you remove all task buttons above list will disappear.
-<img src="%PUBLIC_URL%/../public/deletingSingleTask.gif" alt="to-do-list demo animation" width=500px />
+<img src="./src/deletingSingleTasks.gif" />
+
+1. When you want quickly fill in the list, you can fetch example tasks, using proper button.
+<img src="./src/addingSampleTasks.gif" >
 
 1. If you would like to change aplication language to polish, you can do it by clicking button at the top of a form with abreviation "PL". To switch back to english use proper button marked with "EN".
-<img src="%PUBLIC_URL%/../public/changingLanguage.gif" alt="to-do-list demo animation" width=500px />
+<img src="./src/changingLanguage.gif" />
+
+1. You can find any task using embedded search engine.
+<img src="./src/filteringTasks.gif" >
+
+1. To view details of single task, simply click on it.
+<img src="./src/viewingSingleTasks.gif" >
+
+2. You can also read few words about aplication author in both languages.
+<img src="./src/viewingAuthorPage.gif" >
+
+1. When there will be problem with tasks, you'll get proper information.
+<img src="./src/failureTasksHandling.gif" >
+
+1. When will be problem with fetching example tasks, you'll also be noticed.
+<img src="./src/failureFetchHandling.gif" >
 
 1. When you will open the app with the same browser your tasks and language settings will be there.
 
