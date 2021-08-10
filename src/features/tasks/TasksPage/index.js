@@ -32,8 +32,14 @@ function TasksPage() {
         extraHeaderContent={
           <>
             <div>
-              <Button onClick={() => dispatch(fetchExampleTasks())}>
-                {(state === "loading") ? descriptions[language].getExampleTasksButtonLoader : descriptions[language].getExampleTasksButtonText}
+              <Button
+                disabled={state === "loading"}
+                onClick={() => dispatch(fetchExampleTasks())}
+              >
+                {(state === "loading") ?
+                  descriptions[language].getExampleTasksButtonLoader
+                  : descriptions[language].getExampleTasksButtonText
+                }
               </Button>
             </div>
           </>
