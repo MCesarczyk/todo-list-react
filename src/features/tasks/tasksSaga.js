@@ -12,7 +12,7 @@ function* fetchExampleTasksHandler() {
         yield put(setTasks(exampleTasks));
         yield put(setTasksState("done"));
     } catch (error) {
-        yield call(alert, "Something bad happened!");
+        yield call(alert, "Sorry...unable to fetch data!");
     }
 }
 
