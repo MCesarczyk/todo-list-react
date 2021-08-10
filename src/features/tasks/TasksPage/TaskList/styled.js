@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
+const activeClassName = "active";
 
 export const StyledTaskList = styled.ul`
     background-color: ${({ theme }) => theme.color.background};
@@ -17,6 +19,16 @@ export const ListItem = styled.li`
     border-style: solid;
     border-width: 0px 0px 1px 0px;
     border-color: ${({ theme }) => theme.color.borders};
+`;
+
+export const StyledLink = styled(Link).attrs(props => ({
+    activeClassName
+}))`
+    color: ${({ theme }) => theme.color.primary};
+    
+      &:${activeClassName} {
+        filter: brightness(150%);
+    }
 `;
 
 export const TaskContent = styled.span`
