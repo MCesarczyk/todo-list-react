@@ -1,5 +1,4 @@
 import Form from "./Form";
-import Switcher from "../../languages/Switcher";
 import TaskList from "./TaskList";
 import Buttons from "./Buttons";
 import Section from "../../../common/Section";
@@ -34,15 +33,14 @@ function TasksPage() {
           <>
             <div>
               <Button onClick={() => dispatch(fetchExampleTasks())}>
-                {(state === "loading") ? "loading" : descriptions[language].getExampleTasksButtonText}
-                {/* {descriptions[language].getExampleTasksButtonText} */}
+                {(state === "loading") ? descriptions[language].getExampleTasksButtonLoader : descriptions[language].getExampleTasksButtonText}
               </Button>
             </div>
           </>
         }
       />
       <Section
-        title="Wyszukiwarka"
+        title={descriptions[language].searchSectionTitle}
         body={<Search />}
         extraHeaderContent={<></>}
       />

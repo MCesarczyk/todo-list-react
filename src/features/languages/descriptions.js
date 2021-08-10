@@ -8,7 +8,18 @@ const descriptions = {
     setDoneButtonInnerText: "Finish all",
     toggleButtonInnerTextHidden: "Show done",
     toggleButtonInnerTextVisible: "Hide done",
-    getExampleTasksButtonText: "Get example tasks"
+    getExampleTasksButtonText: "Get example tasks",
+    tasksPageTitle: "Tasks",
+    taskPageTitle: "Task details",
+    taskStatusLabel: "Accomplished: ",
+    taskStatusDone: "Yes",
+    taskStatusUndone: "No",
+    taskStatusNotFound: "Task not found",
+    searchSectionTitle: "Search",
+    searchLabelPlaceholder: "Filter tasks",
+    getExampleTasksButtonLoader: "Loading...",
+    authorPageTitle: "About author",
+    authorPageContent: "My name is Mike. I deal with machining on a daily basis, working in the railway industry as a CNC technologist-programmer. I like this programming part of my job the most. IT technologies, the world of FOSS, Linux and the basics of programming have always been close to me, and for some time I plan to make frontend development my main occupation. Outside of working hours, I lift weights at the gym, ride my bike, and recently I also swim on a paddleboard, which my wife infected me with :)",
   },
   PL: {
     headerTitle: "Lista zadań",
@@ -19,7 +30,18 @@ const descriptions = {
     setDoneButtonInnerText: "Ukończ wszystkie",
     toggleButtonInnerTextHidden: "Pokaż ukończone",
     toggleButtonInnerTextVisible: "Ukryj ukończone",
-    getExampleTasksButtonText: "Pobierz przykładowe zadania"
+    getExampleTasksButtonText: "Pobierz przykładowe zadania",
+    tasksPageTitle: "Zadania",
+    taskPageTitle: "Szczegóły zadania",
+    taskStatusLabel: "Ukończone: ",
+    taskStatusDone: "Tak",
+    taskStatusUndone: "Nie",
+    taskStatusNotFound: "Nie znaleziono zadania",
+    searchSectionTitle: "Wyszukiwarka",
+    searchLabelPlaceholder: "Filtruj zadania",
+    getExampleTasksButtonLoader: "Ładowanie...",
+    authorPageTitle: "O autorze",
+    authorPageContent: "Mam na imię Michał.Na co dzień zajmuję się obróbką skrawaniem, pracując w branży kolejowej jako technolog- programista CNC.Tę programistyczną część mojej pracy lubię najbardziej.Zawsze bliskie mi były technologie IT, świat FOSS, Linuksa i podstawy programowania, a od jakiegoś czasu planuję uczynić frontend development moim głównym zajęciem.Poza godzinami pracy ćwiczę na siłowni, jeżdżę na rowerze, a od niedawna także pływam na paddleboardzie, czym zaraziła mnie moja małżonka:)",
   }
 };
 
