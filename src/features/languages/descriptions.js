@@ -11,7 +11,7 @@ const descriptions = {
     getExampleTasksButtonText: "Get example tasks",
     tasksPageTitle: "Tasks",
     taskPageTitle: "Task details",
-    taskStatusLabel: "Accomplished: ",
+    taskStatusLabel: "Completed: ",
     taskStatusDone: "Yes",
     taskStatusUndone: "No",
     taskStatusNotFound: "Task not found",
