@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { selectLanguage } from "../../../languages/languageSlice";
 import { useQueryParameter, useReplaceQueryParameter } from "../queryParameters";
 import { Wrapper } from "./styled";
-import Input from "../../input"
+import Input from "../../Input"
 import searchQueryParamName from "../searchQueryParamName";
 import descriptions from "../../../languages/descriptions";
 
