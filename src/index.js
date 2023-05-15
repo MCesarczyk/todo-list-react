@@ -1,15 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { Normalize } from "styled-normalize";
-import { GlobalStyle } from "./GlobalStyle";
-import { ThemeProvider } from "styled-components";
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { theme } from "./theme";
-import store from "./store";
+import { ThemeProvider } from 'styled-components';
+import { Normalize } from 'styled-normalize';
 
-ReactDOM.render(
+import App from './App';
+import store from './store';
+import { theme } from './theme';
+import { GlobalStyle } from './GlobalStyle';
+import reportWebVitals from './reportWebVitals';
+
+const container = document.getElementById('root');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -18,8 +21,7 @@ ReactDOM.render(
         <App />
       </ThemeProvider>
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
