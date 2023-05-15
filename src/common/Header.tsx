@@ -1,6 +1,6 @@
-import { Switcher } from "common/languages/Switcher";
-import { descriptions } from "common/languages/descriptions";
-import { HeaderWrapper } from "common/HeaderWrapper";
+import { Switcher } from 'common/languages/Switcher';
+import { descriptions } from 'common/languages/descriptions';
+import { HeaderWrapper } from 'common/HeaderWrapper';
 
 interface HeaderProps {
   title: string;

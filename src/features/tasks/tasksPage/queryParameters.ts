@@ -10,7 +10,7 @@ export const useReplaceQueryParameter = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  return ({ key, value }: { key: string, value: string | undefined}) => {
+  return ({ key, value }: { key: string; value: string | undefined }) => {
     const searchParams = new URLSearchParams(location.search);
 
     if (value) {

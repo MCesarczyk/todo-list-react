@@ -13,11 +13,7 @@ export const Switcher = ({ descriptions }: SwitcherProps) => {
   return (
     <div>
       {Object.keys(descriptions).map((key) => (
-        <Button
-          key={key}
-          value={key}
-          onClick={() => dispatch(changeLanguage(key))}
-        >
+        <Button key={key} value={key} onClick={() => dispatch(changeLanguage(key))}>
           {key}
         </Button>
       ))}

@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { styled } from "styled-components";
-import { HeaderWrapper } from "common/HeaderWrapper";
+import { ReactNode } from 'react';
+import { styled } from 'styled-components';
+import { HeaderWrapper } from 'common/HeaderWrapper';
 
 interface SectionProps {
   title: string;

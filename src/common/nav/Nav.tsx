@@ -8,12 +8,7 @@ interface NavProps {
   authorLabel: string;
 }
 
-export const Nav = ({
-  tasksPath,
-  tasksLabel,
-  authorPath,
-  authorLabel,
-}: NavProps) => (
+export const Nav = ({ tasksPath, tasksLabel, authorPath, authorLabel }: NavProps) => (
   <nav>
     <StyledNavList>
       <li>

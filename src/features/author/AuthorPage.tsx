@@ -10,11 +10,7 @@ export const AuthorPage = () => {
   return (
     <main>
       <Header title={descriptions[language].authorPageTitle} />
-      <Section
-        title="Michał Cesarczyk"
-        body={descriptions[language].authorPageContent}
-        extraHeaderContent={<></>}
-      />
+      <Section title="Michał Cesarczyk" body={descriptions[language].authorPageContent} extraHeaderContent={<></>} />
     </main>
   );
 };

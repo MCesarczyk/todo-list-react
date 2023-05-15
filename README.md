@@ -9,6 +9,7 @@ Todo list made using React.js
 https://mcesarczyk.github.io/todo-list-react/
 
 ## Used technologies:
+
 - html
 - CSS
 - CSS-Flexbox
@@ -25,7 +26,9 @@ https://mcesarczyk.github.io/todo-list-react/
 - Redux-Saga (side effects, local storage management)
 
 ## Short description:
+
 With this app You're able to:
+
 - add/remove tasks
 - mark it as done individually
 - mark as done all at once
@@ -41,43 +44,42 @@ Additionally, the app automatically saves content and state of wtitten down task
 ## How to use this app:
 
 1. To add task write its content and click "Add task" button or simply click Enter.
-<img src="./src/images/addingNewTasks.gif" />
+   <img src="./src/images/addingNewTasks.gif" />
 
 1. If you want to mark task as done click on green field on the list. In the same way you can uncheck chosen tasks.
-<img src="./src/images/markingTaskDone.gif" />
+   <img src="./src/images/markingTaskDone.gif" />
 
 1. If you want to hide all done tasks clisk on button "Hide done". Description on button will now change to "Show done". To restore tasks, click this button again.
-<img src="./src/images/togglingVisibilityOfDoneTasks.gif" />
+   <img src="./src/images/togglingVisibilityOfDoneTasks.gif" />
 
 1. When you done all task and want to check them, click on "Finish all". Please notice that button will now become inactive, but if you uncheck any task, button will become active again.
-<img src="./src/images/markingAllDone.gif" />
+   <img src="./src/images/markingAllDone.gif" />
 
 1. To remove single task click on red button with trash bin icon on right. When you remove all task buttons above list will disappear.
-<img src="./src/images/deletingSingleTasks.gif" />
+   <img src="./src/images/deletingSingleTasks.gif" />
 
 1. When you want quickly fill in the list, you can fetch example tasks, using proper button.
-<img src="./src/images/addingSampleTasks.gif" >
+   <img src="./src/images/addingSampleTasks.gif" >
 
 1. If you would like to change aplication language to polish, you can do it by clicking button at the top of a form with abreviation "PL". To switch back to english use proper button marked with "EN".
-<img src="./src/images/changingLanguage.gif" />
+   <img src="./src/images/changingLanguage.gif" />
 
 1. You can find any task using embedded search engine.
-<img src="./src/images/filteringTasks.gif" >
+   <img src="./src/images/filteringTasks.gif" >
 
 1. To view details of single task, simply click on it.
-<img src="./src/images/viewingSingleTasks.gif" >
+   <img src="./src/images/viewingSingleTasks.gif" >
 
-2. You can also read few words about aplication author in both languages.
-<img src="./src/images/viewingAuthorPage.gif" >
+1. You can also read few words about aplication author in both languages.
+   <img src="./src/images/viewingAuthorPage.gif" >
 
 1. When there will be problem with tasks, you'll get proper information.
-<img src="./src/images/failureTasksHandling.gif" >
+   <img src="./src/images/failureTasksHandling.gif" >
 
 1. When will be problem with fetching example tasks, you'll also be noticed.
-<img src="./src/images/failureFetchHandling.gif" >
+   <img src="./src/images/failureFetchHandling.gif" >
 
 1. When you will open the app with the same browser your tasks and language settings will be there.
-
 
 # Getting Started with Create React App
 

@@ -20,11 +20,7 @@ export const TaskPage = () => {
         body={
           <>
             <strong>{task && descriptions[language].taskStatusLabel}</strong>
-            {task
-              ? task.done
-                ? descriptions[language].taskStatusDone
-                : descriptions[language].taskStatusUndone
-              : ''}
+            {task ? (task.done ? descriptions[language].taskStatusDone : descriptions[language].taskStatusUndone) : ''}
           </>
         }
         extraHeaderContent={<></>}
