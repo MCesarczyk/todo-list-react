@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
 import { Descriptions } from 'types';
-import { changeLanguage } from 'features/languages/languageSlice';
+import { changeLanguage } from 'common/languages/languageSlice';
 
 interface SwitcherProps {
   descriptions: Descriptions;
@@ -13,11 +13,7 @@ export const Switcher = ({ descriptions }: SwitcherProps) => {
   return (
     <div>
       {Object.keys(descriptions).map((key) => (
-        <Button
-          key={key}
-          value={key}
-          onClick={() => dispatch(changeLanguage(key))}
-        >
+        <Button key={key} value={key} onClick={() => dispatch(changeLanguage(key))}>
           {key}
         </Button>
       ))}

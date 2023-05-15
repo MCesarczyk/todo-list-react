@@ -1,14 +1,16 @@
 import { Route, HashRouter, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectLanguage } from 'features/languages/languageSlice';
-import { descriptions } from 'features/languages/descriptions';
+import { selectLanguage } from 'common/languages/languageSlice';
+import { descriptions } from 'common/languages/descriptions';
 import { TasksPage } from 'features/tasks/tasksPage/TasksPage';
 import { TaskPage } from 'features/tasks/TaskPage';
 import { AuthorPage } from 'features/author/AuthorPage';
 import { Nav } from 'common/nav/Nav';
 
-const App = () => {
+export const App = () => {
   const language = useSelector(selectLanguage);
+
+  document.title = descriptions[language].headerTitle;
 
   return (
     <HashRouter>
@@ -27,5 +29,3 @@ const App = () => {
     </HashRouter>
   );
 };
-
-export default App;

@@ -1,13 +1,13 @@
-import { descriptions } from 'features/languages/descriptions';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectLanguage } from 'features/languages/languageSlice';
-import { fetchExampleTasks, selectState } from 'features/tasks/tasksSlice';
-import { Header } from 'common/header/Header';
+import { descriptions } from 'common/languages/descriptions';
+import { selectLanguage } from 'common/languages/languageSlice';
+import { Header } from 'common/Header';
 import { Section } from 'common/Section';
+import { fetchExampleTasks, selectState } from 'features/tasks/tasksSlice';
 import { Form } from './Form';
 import { Search } from './Search';
 import { TasksList } from './TasksList';
-import { Buttons } from './Buttons';
+import { FormButtons } from './FormButtons';
 import { Button } from './Button';
 
 export const TasksPage = () => {
@@ -15,8 +15,6 @@ export const TasksPage = () => {
   const state = useSelector(selectState);
 
   const dispatch = useDispatch();
-
-  document.title = descriptions[language].headerTitle;
 
   return (
     <main>
@@ -32,10 +30,7 @@ export const TasksPage = () => {
         extraHeaderContent={
           <>
             <div>
-              <Button
-                disabled={state === 'loading'}
-                onClick={() => dispatch(fetchExampleTasks())}
-              >
+              <Button disabled={state === 'loading'} onClick={() => dispatch(fetchExampleTasks())}>
                 {state === 'loading'
                   ? descriptions[language].getExampleTasksButtonLoader
                   : descriptions[language].getExampleTasksButtonText}
@@ -44,25 +39,15 @@ export const TasksPage = () => {
           </>
         }
       />
-      <Section
-        title={descriptions[language].searchSectionTitle}
-        body={<Search />}
-        extraHeaderContent={<></>}
-      />
+      <Section title={descriptions[language].searchSectionTitle} body={<Search />} extraHeaderContent={<></>} />
       <Section
         title={descriptions[language].tasksSectionTitle}
         body={<TasksList />}
         extraHeaderContent={
-          <Buttons
-            setDoneButtonInnerText={
-              descriptions[language].setDoneButtonInnerText
-            }
-            toggleButtonInnerTextVisible={
-              descriptions[language].toggleButtonInnerTextVisible
-            }
-            toggleButtonInnerTextHidden={
-              descriptions[language].toggleButtonInnerTextHidden
-            }
+          <FormButtons
+            setDoneButtonInnerText={descriptions[language].setDoneButtonInnerText}
+            toggleButtonInnerTextVisible={descriptions[language].toggleButtonInnerTextVisible}
+            toggleButtonInnerTextHidden={descriptions[language].toggleButtonInnerTextHidden}
           />
         }
       />

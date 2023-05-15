@@ -30,7 +30,7 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
         content: trimmedContent,
         done: false,
         id: nanoid(),
-      })
+      }),
     );
 
     setNewTaskContent('');

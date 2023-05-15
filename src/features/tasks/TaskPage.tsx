@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
-import { getTasksById } from 'features/tasks/tasksSlice';
-import { descriptions } from 'features/languages/descriptions';
-import { selectLanguage } from 'features/languages/languageSlice';
-import { Header } from 'common/header/Header';
+import { descriptions } from 'common/languages/descriptions';
+import { selectLanguage } from 'common/languages/languageSlice';
+import { Header } from 'common/Header';
 import { Section } from 'common/Section';
+import { getTasksById } from 'features/tasks/tasksSlice';
 
 export const TaskPage = () => {
   const { id } = useParams();
@@ -20,11 +20,7 @@ export const TaskPage = () => {
         body={
           <>
             <strong>{task && descriptions[language].taskStatusLabel}</strong>
-            {task
-              ? task.done
-                ? descriptions[language].taskStatusDone
-                : descriptions[language].taskStatusUndone
-              : ''}
+            {task ? (task.done ? descriptions[language].taskStatusDone : descriptions[language].taskStatusUndone) : ''}
           </>
         }
         extraHeaderContent={<></>}
