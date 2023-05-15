@@ -1,4 +1,6 @@
-const descriptions = {
+import { Descriptions } from "types";
+
+const descriptions: Descriptions = {
   EN: {
     headerTitle: "To-do list",
     sectionTitle: "Add new task",
@@ -19,7 +21,7 @@ const descriptions = {
     searchLabelPlaceholder: "Filter tasks",
     getExampleTasksButtonLoader: "Loading...",
     authorPageTitle: "About author",
-    authorPageContent: "My name is Mike. I deal with machining on a daily basis, working in the railway industry as a CNC technologist-programmer. I like this programming part of my job the most. IT technologies, the world of FOSS, Linux and the basics of programming have always been close to me, and for some time I plan to make frontend development my main occupation. Outside of working hours, I lift weights at the gym, ride my bike, and recently I also swim on a paddleboard, which my wife infected me with :)",
+    authorPageContent: "My name is Michał and I'm Typescript-React-based frontend developer. Currently I'm working a lot with geospatial functionalities, maps, remote sensing data. In free time I exercise with Node.js, Prisma, Nest, NX, PostgreSQL and learn about software architecture.",
   },
   PL: {
     headerTitle: "Lista zadań",
@@ -41,7 +43,7 @@ const descriptions = {
     searchLabelPlaceholder: "Filtruj zadania",
     getExampleTasksButtonLoader: "Ładowanie...",
     authorPageTitle: "O autorze",
-    authorPageContent: "Mam na imię Michał.Na co dzień zajmuję się obróbką skrawaniem, pracując w branży kolejowej jako technolog- programista CNC.Tę programistyczną część mojej pracy lubię najbardziej.Zawsze bliskie mi były technologie IT, świat FOSS, Linuksa i podstawy programowania, a od jakiegoś czasu planuję uczynić frontend development moim głównym zajęciem.Poza godzinami pracy ćwiczę na siłowni, jeżdżę na rowerze, a od niedawna także pływam na paddleboardzie, czym zaraziła mnie moja małżonka:)",
+    authorPageContent: "Mam na imię Michał i jestem frontend developerem opartym na Typescript i React. Obecnie dużo pracuję z funkcjonalnościami geoprzestrzennymi, mapami, danymi z teledetekcji. W wolnym czasie ćwiczę Node.js, Prisma, Nest, NX, PostgreSQL i uczę się o architekturze oprogramowania.",
   }
 };
 

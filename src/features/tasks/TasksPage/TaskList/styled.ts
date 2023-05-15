@@ -28,7 +28,7 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const TaskContent = styled.span`
+export const TaskContent = styled.span<{ $done: boolean }>`
   word-break: break-all;
 
   ${({ $done }) =>
@@ -38,7 +38,7 @@ export const TaskContent = styled.span`
     `}
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ $toggleDone?: boolean, $remove?: boolean }>`
   cursor: pointer;
   display: flex;
   justify-content: center;

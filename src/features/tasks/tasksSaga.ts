@@ -2,13 +2,14 @@ import { call, put, delay, takeLatest, takeEvery, select } from "redux-saga/effe
 import { saveTasksInLocalStorage } from "./tasksLocalStorage";
 import { fetchExampleTasks, setTasks, selectTasks, setTasksState } from "./tasksSlice";
 import { getExampleTasks } from "./getExampleTasks";
+import { Task } from "types";
 
 
 function* fetchExampleTasksHandler() {
     try {
         yield put(setTasksState("loading"));
         yield delay(2000);
-        const exampleTasks = yield call(getExampleTasks);
+        const exampleTasks: Task[] = yield call(getExampleTasks);
         yield put(setTasks(exampleTasks));
         yield put(setTasksState("done"));
     } catch (error) {
@@ -17,7 +18,7 @@ function* fetchExampleTasksHandler() {
 }
 
 function* saveTasksInLocalStorageHandler() {
-    const tasks = yield select(selectTasks);
+    const tasks: Task[] = yield select(selectTasks);
     yield call(saveTasksInLocalStorage, tasks);
 }
 

@@ -5,13 +5,13 @@ import { ThemeProvider } from 'styled-components';
 import { Normalize } from 'styled-normalize';
 
 import App from './App';
-import store from './store';
+import { store } from './store';
 import { theme } from './theme';
 import { GlobalStyle } from './GlobalStyle';
 import reportWebVitals from './reportWebVitals';
 
 const container = document.getElementById('root');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
+const root = createRoot(container!);
 root.render(
   <React.StrictMode>
     <Provider store={store}>

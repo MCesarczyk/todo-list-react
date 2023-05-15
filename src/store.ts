@@ -6,7 +6,7 @@ import { tasksSaga } from "./features/tasks/tasksSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
-const store = configureStore({
+export const store = configureStore({
     reducer: {
         tasks: tasksReducer,
         languages: languageReducer,
@@ -16,4 +16,5 @@ const store = configureStore({
 
 sagaMiddleware.run(tasksSaga);
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

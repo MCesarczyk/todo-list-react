@@ -5,10 +5,11 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import { getTasksById } from "../tasksSlice";
 import { selectLanguage } from "../../languages/languageSlice";
+import { RootState } from "store";
 
 function TaskPage() {
   const { id } = useParams();
-  const task = useSelector(state => getTasksById(state, id));
+  const task = useSelector((state: RootState) => getTasksById(state, id));
   const language = useSelector(selectLanguage);
 
   return (
