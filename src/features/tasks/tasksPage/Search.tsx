@@ -1,14 +1,14 @@
+import { ChangeEvent } from 'react';
 import { useSelector } from 'react-redux';
-import { selectLanguage } from '../../../languages/languageSlice';
+import { styled } from 'styled-components';
+import { selectLanguage } from 'features/languages/languageSlice';
 import {
   useQueryParameter,
   useReplaceQueryParameter,
-} from '../queryParameters';
-import { Wrapper } from './styled';
-import searchQueryParamName from '../searchQueryParamName';
-import descriptions from '../../../languages/descriptions';
-import { ChangeEvent } from 'react';
-import { Input } from 'features/tasks/Input/Input';
+} from 'features/tasks/tasksPage/queryParameters';
+import searchQueryParamName from 'features/tasks/tasksPage/searchQueryParamName';
+import { descriptions } from 'features/languages/descriptions';
+import { Input } from 'features/tasks/tasksPage/Input';
 
 export const Search = () => {
   const language = useSelector(selectLanguage);
@@ -32,3 +32,8 @@ export const Search = () => {
     </Wrapper>
   );
 };
+
+export const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+`;

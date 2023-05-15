@@ -1,5 +1,45 @@
-import { Link } from 'react-router-dom';
-import styled, { css } from 'styled-components';
+import { Link, useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { css, styled } from 'styled-components';
+import { RootState } from 'store';
+import {
+  selectTasksByQuery,
+  toggleTaskDone,
+  removeTask,
+  selectHideDone,
+} from 'features/tasks/tasksSlice';
+import searchQueryParamName from 'features/tasks/tasksPage/searchQueryParamName';
+
+export const TasksList = () => {
+  const location = useLocation();
+  const query: string | null = new URLSearchParams(location.search).get(
+    searchQueryParamName
+  );
+
+  const tasks = useSelector((state: RootState) =>
+    selectTasksByQuery(state, query)
+  );
+  const hideDone = useSelector(selectHideDone);
+  const dispatch = useDispatch();
+
+  return (
+    <StyledTaskList>
+      {tasks.map((task) => (
+        <ListItem key={task.id} hidden={task.done && hideDone}>
+          <Button $toggleDone onClick={() => dispatch(toggleTaskDone(task.id))}>
+            {task.done ? '✔' : ' '}
+          </Button>
+          <TaskContent $done={task.done}>
+            <StyledLink to={`/tasks/${task.id}`}>{task.content}</StyledLink>
+          </TaskContent>
+          <Button $remove onClick={() => dispatch(removeTask(task.id))}>
+            🗑
+          </Button>
+        </ListItem>
+      ))}
+    </StyledTaskList>
+  );
+};
 
 export const StyledTaskList = styled.ul`
   background-color: ${({ theme }) => theme.color.background};
@@ -38,7 +78,10 @@ export const TaskContent = styled.span<{ $done: boolean }>`
     `}
 `;
 
-export const Button = styled.button<{ $toggleDone?: boolean, $remove?: boolean }>`
+export const Button = styled.button<{
+  $toggleDone?: boolean;
+  $remove?: boolean;
+}>`
   cursor: pointer;
   display: flex;
   justify-content: center;

@@ -1,9 +1,10 @@
-import { nanoid } from '@reduxjs/toolkit';
 import { FormEvent, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addTask } from '../../tasksSlice';
-import { FormComponent, Button } from './styled';
-import { Input } from 'features/tasks/Input/Input';
+import { styled } from 'styled-components';
+import { nanoid } from '@reduxjs/toolkit';
+import { addTask } from 'features/tasks/tasksSlice';
+import { Input } from 'features/tasks/tasksPage/Input';
+import { Button } from 'features/tasks/tasksPage/Button';
 
 interface FormProps {
   inputPlaceholder: string;
@@ -51,3 +52,13 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
     </FormComponent>
   );
 };
+
+export const FormComponent = styled.form`
+  background-color: ${({ theme }) => theme.color.background};
+  padding: 10px;
+  display: flex;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}) {
+    flex-direction: column;
+  }
+`;

@@ -1,12 +1,11 @@
 import { Route, HashRouter, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import { selectLanguage } from 'features/languages/languageSlice';
-import descriptions from 'features/languages/descriptions';
-import { TasksPage } from 'features/tasks/TasksPage/TasksPage';
-import { TaskPage } from 'features/tasks/TaskPage/TaskPage';
+import { descriptions } from 'features/languages/descriptions';
+import { TasksPage } from 'features/tasks/tasksPage/TasksPage';
+import { TaskPage } from 'features/tasks/TaskPage';
 import { AuthorPage } from 'features/author/AuthorPage';
-import { Nav } from 'common/Nav/Nav';
+import { Nav } from 'common/nav/Nav';
 
 const App = () => {
   const language = useSelector(selectLanguage);

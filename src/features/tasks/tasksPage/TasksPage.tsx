@@ -1,14 +1,14 @@
-import descriptions from '../../languages/descriptions';
+import { descriptions } from 'features/languages/descriptions';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectLanguage } from '../../languages/languageSlice';
-import { Button } from './styled';
-import { fetchExampleTasks, selectState } from '../tasksSlice';
-import { Header } from 'common/Header';
-import { Section } from 'common/Section/Section';
-import { Form } from './Form/Form';
-import { Search } from './Search/Search';
-import { TaskList } from './TaskList/TaskList';
-import { Buttons } from './Buttons/Buttons';
+import { selectLanguage } from 'features/languages/languageSlice';
+import { fetchExampleTasks, selectState } from 'features/tasks/tasksSlice';
+import { Header } from 'common/header/Header';
+import { Section } from 'common/Section';
+import { Form } from './Form';
+import { Search } from './Search';
+import { TasksList } from './TasksList';
+import { Buttons } from './Buttons';
+import { Button } from './Button';
 
 export const TasksPage = () => {
   const language = useSelector(selectLanguage);
@@ -51,7 +51,7 @@ export const TasksPage = () => {
       />
       <Section
         title={descriptions[language].tasksSectionTitle}
-        body={<TaskList />}
+        body={<TasksList />}
         extraHeaderContent={
           <Buttons
             setDoneButtonInnerText={

@@ -1,6 +1,6 @@
 import { Descriptions } from "types";
 
-const descriptions: Descriptions = {
+export const descriptions: Descriptions = {
   EN: {
     headerTitle: "To-do list",
     sectionTitle: "Add new task",
@@ -46,5 +46,3 @@ const descriptions: Descriptions = {
     authorPageContent: "Mam na imię Michał i jestem frontend developerem opartym na Typescript i React. Obecnie dużo pracuję z funkcjonalnościami geoprzestrzennymi, mapami, danymi z teledetekcji. W wolnym czasie ćwiczę Node.js, Prisma, Nest, NX, PostgreSQL i uczę się o architekturze oprogramowania.",
   }
 };
-
-export default descriptions;
