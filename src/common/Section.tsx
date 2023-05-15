@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
-import { styled } from 'styled-components';
-import { HeaderContainer } from 'common/header/HeaderContainer';
+import { ReactNode } from "react";
+import { styled } from "styled-components";
+import { HeaderWrapper } from "common/HeaderWrapper";
 
 interface SectionProps {
   title: string;
@@ -10,10 +10,10 @@ interface SectionProps {
 
 export const Section = ({ title, body, extraHeaderContent }: SectionProps) => (
   <SectionContainer>
-    <HeaderContainer>
+    <HeaderWrapper>
       <Header>{title}</Header>
       {extraHeaderContent}
-    </HeaderContainer>
+    </HeaderWrapper>
     {body}
   </SectionContainer>
 );

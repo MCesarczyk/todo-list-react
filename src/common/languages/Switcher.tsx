@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
 import { Descriptions } from 'types';
-import { changeLanguage } from 'features/languages/languageSlice';
+import { changeLanguage } from 'common/languages/languageSlice';
 
 interface SwitcherProps {
   descriptions: Descriptions;

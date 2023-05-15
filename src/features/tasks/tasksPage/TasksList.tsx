@@ -8,12 +8,12 @@ import {
   removeTask,
   selectHideDone,
 } from 'features/tasks/tasksSlice';
-import searchQueryParamName from 'features/tasks/tasksPage/searchQueryParamName';
+import { SEARCH_QUERY_PARAM_NAME } from './constants';
 
 export const TasksList = () => {
   const location = useLocation();
   const query: string | null = new URLSearchParams(location.search).get(
-    searchQueryParamName
+    SEARCH_QUERY_PARAM_NAME
   );
 
   const tasks = useSelector((state: RootState) =>

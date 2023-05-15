@@ -8,17 +8,17 @@ import {
   selectIfAllDone,
 } from 'features/tasks/tasksSlice';
 
-interface ButtonsProps {
+interface FormButtonsProps {
   setDoneButtonInnerText: string;
   toggleButtonInnerTextHidden: string;
   toggleButtonInnerTextVisible: string;
 }
 
-export const Buttons = ({
+export const FormButtons = ({
   setDoneButtonInnerText,
   toggleButtonInnerTextHidden,
   toggleButtonInnerTextVisible,
-}: ButtonsProps) => {
+}: FormButtonsProps) => {
   const tasks = useSelector(selectTasks);
   const hideDone = useSelector(selectHideDone);
   const allDone = useSelector(selectIfAllDone);
