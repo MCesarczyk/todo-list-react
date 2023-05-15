@@ -1,16 +1,16 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { FormEvent, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Input from '../../Input';
 import { addTask } from '../../tasksSlice';
 import { FormComponent, Button } from './styled';
+import { Input } from 'features/tasks/Input/Input';
 
 interface FormProps {
   inputPlaceholder: string;
   formButtonInnerText: string;
 }
 
-const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
+export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
   const [newTaskContent, setNewTaskContent] = useState('');
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -51,5 +51,3 @@ const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
     </FormComponent>
   );
 };
-
-export default Form;

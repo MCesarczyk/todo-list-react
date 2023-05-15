@@ -5,8 +5,6 @@ interface NavigationLinkProps {
   label: string;
 }
 
-const NavigationLink = ({ path, label }: NavigationLinkProps) => (
+export const NavigationLink = ({ path, label }: NavigationLinkProps) => (
   <StyledNavLink to={path}>{label}</StyledNavLink>
 );
-
-export default NavigationLink;

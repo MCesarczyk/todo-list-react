@@ -16,7 +16,7 @@ import { useLocation } from 'react-router-dom';
 import searchQueryParamName from '../searchQueryParamName';
 import { RootState } from 'store';
 
-const TaskList = () => {
+export const TaskList = () => {
   const location = useLocation();
   const query: string | null = new URLSearchParams(location.search).get(searchQueryParamName);
 
@@ -42,5 +42,3 @@ const TaskList = () => {
     </StyledTaskList>
   );
 };
-
-export default TaskList;

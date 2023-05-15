@@ -14,7 +14,7 @@ interface ButtonsProps {
   toggleButtonInnerTextVisible: string;
 }
 
-const Buttons = ({
+export const Buttons = ({
   setDoneButtonInnerText,
   toggleButtonInnerTextHidden,
   toggleButtonInnerTextVisible,
@@ -41,5 +41,3 @@ const Buttons = ({
     </Element>
   );
 };
-
-export default Buttons;

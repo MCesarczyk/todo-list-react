@@ -7,7 +7,7 @@ interface SwitcherProps {
   descriptions: Descriptions;
 }
 
-const Switcher = ({ descriptions }: SwitcherProps) => {
+export const Switcher = ({ descriptions }: SwitcherProps) => {
   const dispatch = useDispatch();
 
   return (
@@ -24,5 +24,3 @@ const Switcher = ({ descriptions }: SwitcherProps) => {
     </div>
   );
 };
-
-export default Switcher;

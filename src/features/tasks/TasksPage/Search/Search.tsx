@@ -5,12 +5,12 @@ import {
   useReplaceQueryParameter,
 } from '../queryParameters';
 import { Wrapper } from './styled';
-import Input from '../../Input';
 import searchQueryParamName from '../searchQueryParamName';
 import descriptions from '../../../languages/descriptions';
 import { ChangeEvent } from 'react';
+import { Input } from 'features/tasks/Input/Input';
 
-const Search = () => {
+export const Search = () => {
   const language = useSelector(selectLanguage);
   const query = useQueryParameter(searchQueryParamName);
   const replaceQueryParameter = useReplaceQueryParameter();
@@ -32,5 +32,3 @@ const Search = () => {
     </Wrapper>
   );
 };
-
-export default Search;

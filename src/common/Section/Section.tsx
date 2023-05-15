@@ -8,7 +8,7 @@ interface SectionProps {
   extraHeaderContent?: JSX.Element;
 }
 
-const Section = ({ title, body, extraHeaderContent }: SectionProps) => (
+export const Section = ({ title, body, extraHeaderContent }: SectionProps) => (
   <SectionContainer>
     <HeaderContainer>
       <Header>{title}</Header>
@@ -17,5 +17,3 @@ const Section = ({ title, body, extraHeaderContent }: SectionProps) => (
     {body}
   </SectionContainer>
 );
-
-export default Section;

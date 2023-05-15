@@ -1,4 +1,4 @@
-import NavigationLink from './NavigationLink';
+import { NavigationLink } from './NavigationLink/NavigationLink';
 import { StyledNavList } from './styled';
 
 interface NavProps {
@@ -8,7 +8,12 @@ interface NavProps {
   authorLabel: string;
 }
 
-const Nav = ({ tasksPath, tasksLabel, authorPath, authorLabel }: NavProps) => (
+export const Nav = ({
+  tasksPath,
+  tasksLabel,
+  authorPath,
+  authorLabel,
+}: NavProps) => (
   <nav>
     <StyledNavList>
       <li>
@@ -20,5 +25,3 @@ const Nav = ({ tasksPath, tasksLabel, authorPath, authorLabel }: NavProps) => (
     </StyledNavList>
   </nav>
 );
-
-export default Nav;

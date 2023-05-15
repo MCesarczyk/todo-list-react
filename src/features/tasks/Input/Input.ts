@@ -6,5 +6,3 @@ export const Input = styled.input`
   flex-grow: 1;
   margin: 10px;
 `;
-
-export default Input;
