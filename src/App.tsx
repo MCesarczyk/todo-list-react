@@ -7,7 +7,7 @@ import { TaskPage } from 'features/tasks/TaskPage';
 import { AuthorPage } from 'features/author/AuthorPage';
 import { Nav } from 'common/nav/Nav';
 import { useEffect } from 'react';
-const { version } = require("../package.json");
+import { version } from "../package.json";
 
 export const App = () => {
   const language = useSelector(selectLanguage);
