@@ -6,18 +6,24 @@ import { TasksPage } from 'features/tasks/tasksPage/TasksPage';
 import { TaskPage } from 'features/tasks/TaskPage';
 import { AuthorPage } from 'features/author/AuthorPage';
 import { Nav } from 'common/nav/Nav';
+import { useEffect } from 'react';
+const { version } = require("../package.json");
 
 export const App = () => {
   const language = useSelector(selectLanguage);
 
   document.title = descriptions[language].headerTitle;
+  
+  useEffect(() => {
+    console.log(`Version: ${version}`);
+  }, [version]);
 
   return (
     <HashRouter>
       <Nav
-        tasksPath={'/tasks'}
+        tasksPath={"/tasks"}
         tasksLabel={descriptions[language].tasksPageTitle}
-        authorPath={'/author'}
+        authorPath={"/author"}
         authorLabel={descriptions[language].authorPageTitle}
       />
       <Routes>
