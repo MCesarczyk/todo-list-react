@@ -1,6 +1,6 @@
 {
   "name": "todo-list-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "homepage": "https://mcesarczyk.github.io/todo-list-react/",
   "dependencies": {
@@ -20,6 +20,7 @@
   },
   "scripts": {
     "commit": "cz",
+    "release": "standard-version",
     "lint": "eslint . --ext .ts,.tsx",
     "format": "npx prettier --write .",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
@@ -57,10 +58,16 @@
     "path": "^0.12.7",
     "prettier": "^2.8.8",
     "pretty-quick": "^3.1.3",
+    "standard-version": "^9.5.0",
     "typescript": "^5.0.4",
     "vite": "^4.3.6",
     "vite-plugin-svgr": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.31.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
