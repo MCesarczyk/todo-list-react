@@ -44,3 +44,9 @@ Outlined.args = {
   variant: "OUTLINED",
   children: "Outlined action",
 };
+
+export const Text = Template.bind({});
+Text.args = {
+  variant: "TEXT",
+  children: "Text action",
+};

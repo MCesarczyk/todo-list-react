@@ -1,12 +1,14 @@
 import { CSSProperties } from 'react';
 import styled from 'styled-components';
 
-type ButtonVariants = 'PRIMARY' | 'SECONDARY' | 'OUTLINED';
+type ButtonVariants = 'PRIMARY' | 'SECONDARY' | 'OUTLINED' | 'TEXT';
 
 type ButtonStyles = Required<
   Pick<CSSProperties, 'color' | 'backgroundColor' | 'borderColor'> & {
     hoverBackgroundColor: CSSProperties['backgroundColor'];
     hoverColor?: CSSProperties['color'];
+    disabledColor?: CSSProperties['color'];
+    disabledBackgroundColor?: CSSProperties['backgroundColor'];
   }
 >;
 
@@ -21,6 +23,8 @@ const styles: Palette<ButtonVariants, ButtonStyles> = {
     borderColor: 'mainTeal',
     hoverBackgroundColor: 'mainBlue',
     hoverColor: 'white',
+    disabledColor: 'white',
+    disabledBackgroundColor: 'grey',
   },
   SECONDARY: {
     color: 'mainBlue',
@@ -28,6 +32,8 @@ const styles: Palette<ButtonVariants, ButtonStyles> = {
     borderColor: 'lightTeal',
     hoverBackgroundColor: 'white',
     hoverColor: 'mainBlue',
+    disabledColor: 'white',
+    disabledBackgroundColor: 'grey',
   },
   OUTLINED: {
     color: 'primary',
@@ -35,6 +41,17 @@ const styles: Palette<ButtonVariants, ButtonStyles> = {
     borderColor: 'primary',
     hoverBackgroundColor: 'primary',
     hoverColor: 'white',
+    disabledColor: 'white',
+    disabledBackgroundColor: 'grey',
+  },
+  TEXT: {
+    color: 'primary',
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+    hoverBackgroundColor: 'transparent',
+    hoverColor: 'primaryDarker',
+    disabledColor: 'grey',
+    disabledBackgroundColor: 'transparent',
   },
 };
 
@@ -69,9 +86,9 @@ export const Button = styled.button<ButtonProps>`
 
   &:disabled,
   &:disabled:hover {
-    color: ${({ theme }) => theme.color.white};
-    background-color: ${({ theme }) => theme.color.grey};
-    border-color: ${({ theme }) => theme.color.grey};
+    color: ${(props) => props.theme.color[styles[props.variant!].disabledColor]};
+    background-color: ${(props) => props.theme.color[styles[props.variant!].disabledBackgroundColor]};
+    border-color: ${(props) => props.theme.color[styles[props.variant!].disabledBackgroundColor]};
   }
 
   &:enabled:hover {
