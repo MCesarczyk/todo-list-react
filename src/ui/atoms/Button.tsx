@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import styled from 'styled-components';
 
-type ButtonVariants = 'PRIMARY' | 'SECONDARY' | 'OUTLINED' | 'TEXT';
+export type ButtonVariants = 'PRIMARY' | 'SECONDARY' | 'OUTLINED' | 'TEXT';
 
 type ButtonStyles = Required<
   Pick<CSSProperties, 'color' | 'backgroundColor' | 'borderColor'> & {

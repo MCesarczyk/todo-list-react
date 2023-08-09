@@ -1,36 +1,27 @@
-import { useSelector, useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
-import { selectTasks, toggleHideDone, setAllDone, selectHideDone, selectIfAllDone } from 'features/tasks/tasksSlice';
-import { Button } from 'ui/atoms/Button';
+import { Button, ButtonVariants } from 'ui/atoms/Button';
 
-interface FormButtonsProps {
-  setDoneButtonInnerText: string;
-  toggleButtonInnerTextHidden: string;
-  toggleButtonInnerTextVisible: string;
+interface ButtonConfig {
+  variant: string;
+  onClick: () => void;
+  children: string;
+  disabled?: boolean;
 }
 
-export const FormButtons = ({
-  setDoneButtonInnerText,
-  toggleButtonInnerTextHidden,
-  toggleButtonInnerTextVisible,
-}: FormButtonsProps) => {
-  const tasks = useSelector(selectTasks);
-  const hideDone = useSelector(selectHideDone);
-  const allDone = useSelector(selectIfAllDone);
-  const dispatch = useDispatch();
+interface FormButtonsProps {
+  buttonsConfig: ButtonConfig[];
+}
 
+export const FormButtons = ({ buttonsConfig }: FormButtonsProps) => {
   return (
     <ButtonsWrapper>
-      {tasks.length > 0 && (
-        <>
-          <Button variant='TEXT' onClick={() => dispatch(toggleHideDone())}>
-            {hideDone ? toggleButtonInnerTextHidden : toggleButtonInnerTextVisible}
+      <>
+        {buttonsConfig.map(({ variant, onClick, disabled, children }) => (
+          <Button variant={variant as ButtonVariants} onClick={onClick} disabled={disabled}>
+            {children}
           </Button>
-          <Button variant='TEXT' onClick={() => dispatch(setAllDone())} disabled={allDone}>
-            {setDoneButtonInnerText}
-          </Button>
-        </>
-      )}
+        ))}
+      </>
     </ButtonsWrapper>
   );
 };

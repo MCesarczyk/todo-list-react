@@ -3,7 +3,15 @@ import { descriptions } from 'common/languages/descriptions';
 import { selectLanguage } from 'common/languages/languageSlice';
 import { Header } from 'common/Header';
 import { Section } from 'common/Section';
-import { fetchExampleTasks, selectState } from 'features/tasks/tasksSlice';
+import {
+  fetchExampleTasks,
+  selectHideDone,
+  selectIfAllDone,
+  selectState,
+  selectTasks,
+  setAllDone,
+  toggleHideDone,
+} from 'features/tasks/tasksSlice';
 import { Form } from './Form';
 import { Search } from './Search';
 import { TasksList } from './TasksList';
@@ -11,10 +19,30 @@ import { FormButtons } from './FormButtons';
 import { Button } from 'ui/atoms/Button';
 
 export const TasksPage = () => {
+  const dispatch = useDispatch();
+
   const language = useSelector(selectLanguage);
   const state = useSelector(selectState);
 
-  const dispatch = useDispatch();
+  const tasks = useSelector(selectTasks);
+  const hideDone = useSelector(selectHideDone);
+  const allDone = useSelector(selectIfAllDone);
+
+  const buttons = [
+    {
+      variant: 'TEXT',
+      onClick: () => dispatch(toggleHideDone()),
+      children: hideDone
+        ? descriptions[language].toggleButtonInnerTextHidden
+        : descriptions[language].toggleButtonInnerTextVisible,
+    },
+    {
+      variant: 'TEXT',
+      onClick: () => dispatch(setAllDone()),
+      disabled: allDone,
+      children: descriptions[language].setDoneButtonInnerText,
+    },
+  ];
 
   return (
     <main>
@@ -43,13 +71,7 @@ export const TasksPage = () => {
       <Section
         title={descriptions[language].tasksSectionTitle}
         body={<TasksList />}
-        extraHeaderContent={
-          <FormButtons
-            setDoneButtonInnerText={descriptions[language].setDoneButtonInnerText}
-            toggleButtonInnerTextVisible={descriptions[language].toggleButtonInnerTextVisible}
-            toggleButtonInnerTextHidden={descriptions[language].toggleButtonInnerTextHidden}
-          />
-        }
+        extraHeaderContent={tasks && <FormButtons buttonsConfig={buttons} />}
       />
     </main>
   );
