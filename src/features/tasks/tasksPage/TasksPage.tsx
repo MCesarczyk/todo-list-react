@@ -8,7 +8,7 @@ import { Form } from './Form';
 import { Search } from './Search';
 import { TasksList } from './TasksList';
 import { FormButtons } from './FormButtons';
-import { Button } from './Button';
+import { Button } from 'ui/atoms/Button';
 
 export const TasksPage = () => {
   const language = useSelector(selectLanguage);

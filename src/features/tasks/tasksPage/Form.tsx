@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { nanoid } from '@reduxjs/toolkit';
 import { addTask } from 'features/tasks/tasksSlice';
 import { Input } from 'features/tasks/tasksPage/Input';
-import { Button } from 'features/tasks/tasksPage/Button';
+import { Button } from 'ui/atoms/Button';
 
 interface FormProps {
   inputPlaceholder: string;
