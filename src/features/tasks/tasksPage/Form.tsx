@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { nanoid } from '@reduxjs/toolkit';
 import { addTask } from 'features/tasks/tasksSlice';
 import { Input } from 'features/tasks/tasksPage/Input';
-import { Button } from 'ui/atoms/Button';
+import { FormButtons } from 'ui/molecules/FormButtons';
 
 interface FormProps {
   inputPlaceholder: string;
@@ -39,6 +39,14 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
     }
   };
 
+  const buttons = [
+    {
+      variant: 'PRIMARY',
+      onClick: undefined,
+      children: formButtonInnerText,
+    },
+  ];
+
   return (
     <FormComponent onSubmit={onFormSubmit}>
       <Input
@@ -48,7 +56,7 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
         onChange={({ target }) => setNewTaskContent(target.value)}
         autoFocus
       />
-      <Button>{formButtonInnerText}</Button>
+      <FormButtons buttons={buttons} />
     </FormComponent>
   );
 };

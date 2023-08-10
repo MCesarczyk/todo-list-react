@@ -15,8 +15,8 @@ import {
 import { Form } from './Form';
 import { Search } from './Search';
 import { TasksList } from './TasksList';
-import { FormButtons } from './FormButtons';
 import { Button } from 'ui/atoms/Button';
+import { FormButtons } from 'ui/molecules/FormButtons';
 
 export const TasksPage = () => {
   const dispatch = useDispatch();
@@ -71,7 +71,7 @@ export const TasksPage = () => {
       <Section
         title={descriptions[language].tasksSectionTitle}
         body={<TasksList />}
-        extraHeaderContent={tasks && <FormButtons buttonsConfig={buttons} />}
+        extraHeaderContent={tasks && <FormButtons buttons={buttons} />}
       />
     </main>
   );

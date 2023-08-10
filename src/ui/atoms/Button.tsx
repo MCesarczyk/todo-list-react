@@ -81,6 +81,7 @@ export const Button = styled.button<ButtonProps>`
   transition: background 0.5s, transform 1s;
 
   &:disabled {
+    pointer-events: none;
     cursor: not-allowed;
   }
 
