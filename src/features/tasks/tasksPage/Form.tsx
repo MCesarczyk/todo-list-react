@@ -3,8 +3,8 @@ import { useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
 import { nanoid } from '@reduxjs/toolkit';
 import { addTask } from 'features/tasks/tasksSlice';
-import { Input } from 'features/tasks/tasksPage/Input';
 import { FormButtons } from 'ui/molecules/FormButtons';
+import { Input } from 'ui/atoms/Input';
 
 interface FormProps {
   inputPlaceholder: string;
