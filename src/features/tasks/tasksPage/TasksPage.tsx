@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { descriptions } from 'common/languages/descriptions';
 import { selectLanguage } from 'common/languages/languageSlice';
 import { Header } from 'common/Header';
-import { Section } from 'common/Section';
 import {
   fetchExampleTasks,
   selectHideDone,
@@ -17,6 +16,7 @@ import { Search } from './Search';
 import { TasksList } from './TasksList';
 import { Button } from 'ui/atoms/Button';
 import { FormButtons } from 'ui/molecules/FormButtons';
+import { Section } from 'ui/organisms/Section';
 
 export const TasksPage = () => {
   const dispatch = useDispatch();

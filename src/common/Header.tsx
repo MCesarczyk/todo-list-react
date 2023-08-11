@@ -1,6 +1,7 @@
+import { styled } from 'styled-components';
+
 import { Switcher } from 'common/languages/Switcher';
 import { descriptions } from 'common/languages/descriptions';
-import { HeaderWrapper } from 'common/HeaderWrapper';
 
 interface HeaderProps {
   title: string;
@@ -8,9 +9,24 @@ interface HeaderProps {
 
 export const Header = ({ title }: HeaderProps) => (
   <header>
-    <HeaderWrapper>
+    <Wrapper>
       <h1>{title}</h1>
       <Switcher descriptions={descriptions} />
-    </HeaderWrapper>
+    </Wrapper>
   </header>
 );
+
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 10px;
+  align-items: center;
+  padding-right: 10px;
+  margin: 0 0 1px 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+`;
+

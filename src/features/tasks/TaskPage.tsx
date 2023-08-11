@@ -4,8 +4,8 @@ import { RootState } from 'store';
 import { descriptions } from 'common/languages/descriptions';
 import { selectLanguage } from 'common/languages/languageSlice';
 import { Header } from 'common/Header';
-import { Section } from 'common/Section';
 import { getTasksById } from 'features/tasks/tasksSlice';
+import { Section } from 'ui/organisms/Section';
 
 export const TaskPage = () => {
   const { id } = useParams();
