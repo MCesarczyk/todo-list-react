@@ -7,6 +7,10 @@ import { ListItem } from './ListItem';
 export default {
   title: 'Molecules/ListItem',
   component: ListItem,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
   argTypes: {
     hidden: { control: 'boolean' },
     done: { control: 'boolean' },

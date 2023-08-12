@@ -7,6 +7,10 @@ import { FormButtons } from './FormButtons';
 export default {
   title: 'Molecules/FormButtons',
   component: FormButtons,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
   argTypes: {},
 } as Meta;
 

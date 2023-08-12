@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { NavigationLink } from 'common/nav/NavigationLink';
+import { NavLink } from 'react-router-dom';
 
 interface NavProps {
   tasksPath: string;
@@ -12,10 +12,10 @@ export const Nav = ({ tasksPath, tasksLabel, authorPath, authorLabel }: NavProps
   <nav>
     <StyledNavList>
       <li>
-        <NavigationLink path={tasksPath} label={tasksLabel} />
+        <StyledNavLink to={tasksPath}>{tasksLabel}</StyledNavLink>
       </li>
       <li>
-        <NavigationLink path={authorPath} label={authorLabel} />
+        <StyledNavLink to={authorPath}>{authorLabel}</StyledNavLink>
       </li>
     </StyledNavList>
   </nav>
@@ -28,4 +28,13 @@ export const StyledNavList = styled.ul`
   padding: 15px;
   background-color: ${({ theme }) => theme.color.primary};
   margin-bottom: 20px;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+  color: ${({ theme }) => theme.color.fontLight};
+  font-weight: 300;
+
+  &.active {
+    font-weight: 700;
+  }
 `;

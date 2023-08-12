@@ -7,6 +7,10 @@ import { Section } from './Section';
 export default {
   title: 'Organisms/Section',
   component: Section,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
   argTypes: {},
 } as Meta;
 

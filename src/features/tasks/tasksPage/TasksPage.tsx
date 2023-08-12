@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { descriptions } from 'common/languages/descriptions';
 import { selectLanguage } from 'common/languages/languageSlice';
-import { Header } from 'common/Header';
 import {
   fetchExampleTasks,
   selectHideDone,
@@ -11,12 +10,13 @@ import {
   setAllDone,
   toggleHideDone,
 } from 'features/tasks/tasksSlice';
-import { Form } from './Form';
-import { Search } from './Search';
-import { TasksList } from './TasksList';
+import { Layout } from 'features/Layout';
 import { Button } from 'ui/atoms/Button';
 import { FormButtons } from 'ui/molecules/FormButtons';
 import { Section } from 'ui/organisms/Section';
+import { Form } from './Form';
+import { Search } from './Search';
+import { TasksList } from './TasksList';
 
 export const TasksPage = () => {
   const dispatch = useDispatch();
@@ -47,8 +47,7 @@ export const TasksPage = () => {
   ];
 
   return (
-    <main>
-      <Header title={descriptions[language].headerTitle} />
+    <Layout title={descriptions[language].headerTitle}>
       <Section
         title={descriptions[language].sectionTitle}
         body={
@@ -75,6 +74,6 @@ export const TasksPage = () => {
         body={<TasksList />}
         extraHeaderContent={tasks && <FormButtons buttons={buttons} />}
       />
-    </main>
+    </Layout>
   );
 };

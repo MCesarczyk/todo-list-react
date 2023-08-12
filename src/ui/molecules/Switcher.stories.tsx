@@ -7,6 +7,10 @@ import { Switcher } from './Switcher';
 export default {
   title: 'Molecules/Switcher',
   component: Switcher,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
   argTypes: {},
 } as Meta;
 

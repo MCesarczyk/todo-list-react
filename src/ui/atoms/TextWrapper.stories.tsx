@@ -7,6 +7,10 @@ import { TextWrapper } from './TextWrapper';
 export default {
   title: 'Atoms/TextWrapper',
   component: TextWrapper,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
   argTypes: {
     variant: {},
     children: { control: 'text' },

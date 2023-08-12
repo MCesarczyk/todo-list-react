@@ -3,9 +3,9 @@ import { useSelector } from 'react-redux';
 import { RootState } from 'store';
 import { descriptions } from 'common/languages/descriptions';
 import { selectLanguage } from 'common/languages/languageSlice';
-import { Header } from 'common/Header';
 import { getTasksById } from 'features/tasks/tasksSlice';
 import { Section } from 'ui/organisms/Section';
+import { Layout } from 'features/Layout';
 
 export const TaskPage = () => {
   const { id } = useParams();
@@ -13,8 +13,7 @@ export const TaskPage = () => {
   const language = useSelector(selectLanguage);
 
   return (
-    <main>
-      <Header title={descriptions[language].taskPageTitle} />
+    <Layout title={descriptions[language].taskPageTitle}>
       <Section
         title={!task ? descriptions[language].taskStatusNotFound : task.content}
         body={
@@ -25,6 +24,6 @@ export const TaskPage = () => {
         }
         extraHeaderContent={<></>}
       />
-    </main>
+    </Layout>
   );
 };

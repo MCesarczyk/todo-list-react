@@ -1,12 +1,13 @@
+import { useEffect } from 'react';
 import { Route, HashRouter, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { selectLanguage } from 'common/languages/languageSlice';
-import { descriptions } from 'common/languages/descriptions';
+
 import { TasksPage } from 'features/tasks/tasksPage/TasksPage';
 import { TaskPage } from 'features/tasks/TaskPage';
 import { AuthorPage } from 'features/author/AuthorPage';
-import { Nav } from 'common/nav/Nav';
-import { useEffect } from 'react';
+import { selectLanguage } from 'common/languages/languageSlice';
+import { descriptions } from 'common/languages/descriptions';
+import { Nav } from 'common/Nav';
 import { version } from "../package.json";
 
 export const App = () => {

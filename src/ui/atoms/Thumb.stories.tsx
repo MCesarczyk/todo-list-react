@@ -7,6 +7,10 @@ import { Thumb } from './Thumb';
 export default {
   title: 'Atoms/Thumb',
   component: Thumb,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
   argTypes: {
     onClick: { action: 'click' },
     disabled: { control: 'boolean' },
