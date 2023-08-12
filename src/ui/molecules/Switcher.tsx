@@ -1,18 +1,17 @@
 import { styled } from 'styled-components';
+import { sampleSwitcherButtons } from 'ui/molecules/fixtures';
+
 interface ButtonProps {
   key: number;
   value: string;
-  onClick: () => {
-    payload: any;
-    type: 'languages/changeLanguage';
-  };
+  onClick?: () => void;
 }
 
 interface SwitcherProps {
   buttons: ButtonProps[];
 }
 
-export const Switcher = ({ buttons }: SwitcherProps) => (
+export const Switcher = ({ buttons = sampleSwitcherButtons }: SwitcherProps) => (
   <div>
     {buttons.map(({ key, value, onClick }) => (
       <Button key={key} value={value} onClick={onClick}>

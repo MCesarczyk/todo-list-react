@@ -22,31 +22,31 @@ const Template: StoryFn<ComponentProps<typeof Button>> = (args) => <Button {...a
 
 export const Primary = Template.bind({});
 Primary.args = {
-  variant: "PRIMARY",
+  $variant: "PRIMARY",
   children: "Primary action",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  variant: "SECONDARY",
+  $variant: "SECONDARY",
   children: "Secondary action",
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  variant: "PRIMARY",
+  $variant: "PRIMARY",
   disabled: true,
   children: "Primary action",
 };
 
 export const Outlined = Template.bind({});
 Outlined.args = {
-  variant: "OUTLINED",
+  $variant: "OUTLINED",
   children: "Outlined action",
 };
 
 export const Text = Template.bind({});
 Text.args = {
-  variant: "TEXT",
+  $variant: "TEXT",
   children: "Text action",
 };

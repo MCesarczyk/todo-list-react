@@ -15,15 +15,15 @@ export const TasksList = () => {
 
   return (
     <StyledTaskList>
-      {tasks.map((task) => (
-        <ListItem key={task.id} hidden={task.done && hideDone}>
-          <Button $toggleDone onClick={() => dispatch(toggleTaskDone(task.id))}>
-            {task.done ? '✔' : ' '}
+      {tasks.map(({ id, done, content }) => (
+        <ListItem key={id} hidden={done && hideDone}>
+          <Button $toggleDone onClick={() => dispatch(toggleTaskDone(id))}>
+            {done ? '✔' : ' '}
           </Button>
-          <TaskContent $done={task.done}>
-            <StyledLink to={`/tasks/${task.id}`}>{task.content}</StyledLink>
+          <TaskContent $done={done}>
+            <StyledLink to={`/tasks/${id}`}>{content}</StyledLink>
           </TaskContent>
-          <Button $remove onClick={() => dispatch(removeTask(task.id))}>
+          <Button $remove onClick={() => dispatch(removeTask(id))}>
             🗑
           </Button>
         </ListItem>

@@ -30,6 +30,7 @@ export const TasksPage = () => {
 
   const buttons = [
     {
+      id: 1,
       variant: 'TEXT',
       onClick: () => dispatch(toggleHideDone()),
       children: hideDone
@@ -37,6 +38,7 @@ export const TasksPage = () => {
         : descriptions[language].toggleButtonInnerTextVisible,
     },
     {
+      id: 2,
       variant: 'TEXT',
       onClick: () => dispatch(setAllDone()),
       disabled: allDone,

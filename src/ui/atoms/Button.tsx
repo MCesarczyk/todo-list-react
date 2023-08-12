@@ -56,7 +56,7 @@ const styles: Palette<ButtonVariants, ButtonStyles> = {
 };
 
 interface ButtonProps {
-  variant?: ButtonVariants;
+  $variant?: ButtonVariants;
 }
 
 export const ButtonIcon = styled.i`
@@ -72,9 +72,9 @@ export const Button = styled.button<ButtonProps>`
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  color: ${(props) => props.theme.color[styles[props.variant!].color]};
-  background-color: ${(props) => props.theme.color[styles[props.variant!].backgroundColor]};
-  border: 1px solid ${(props) => props.theme.color[styles[props.variant!].borderColor]};
+  color: ${(props) => props.theme.color[styles[props.$variant!].color]};
+  background-color: ${(props) => props.theme.color[styles[props.$variant!].backgroundColor]};
+  border: 1px solid ${(props) => props.theme.color[styles[props.$variant!].borderColor]};
   padding: 5px;
   padding: 10px;
   margin: 10px;
@@ -87,16 +87,16 @@ export const Button = styled.button<ButtonProps>`
 
   &:disabled,
   &:disabled:hover {
-    color: ${(props) => props.theme.color[styles[props.variant!].disabledColor]};
-    background-color: ${(props) => props.theme.color[styles[props.variant!].disabledBackgroundColor]};
-    border-color: ${(props) => props.theme.color[styles[props.variant!].disabledBackgroundColor]};
+    color: ${(props) => props.theme.color[styles[props.$variant!].disabledColor]};
+    background-color: ${(props) => props.theme.color[styles[props.$variant!].disabledBackgroundColor]};
+    border-color: ${(props) => props.theme.color[styles[props.$variant!].disabledBackgroundColor]};
   }
 
   &:enabled:hover {
     color: ${(props) =>
-      props.theme.color[styles[props.variant!].hoverColor] || props.theme.color[styles[props.variant!].color]};
-    background-color: ${(props) => props.theme.color[styles[props.variant!].hoverBackgroundColor!]};
-    border-color: ${(props) => props.theme.color[styles[props.variant!].hoverBackgroundColor!]};
+      props.theme.color[styles[props.$variant!].hoverColor] || props.theme.color[styles[props.$variant!].color]};
+    background-color: ${(props) => props.theme.color[styles[props.$variant!].hoverBackgroundColor!]};
+    border-color: ${(props) => props.theme.color[styles[props.$variant!].hoverBackgroundColor!]};
     transform: scale(1.05);
   }
 
@@ -110,5 +110,5 @@ export const Button = styled.button<ButtonProps>`
   }
 `;
 
-Button.defaultProps = { variant: 'PRIMARY' };
+Button.defaultProps = { $variant: 'PRIMARY' };
 Button.displayName = 'Button';

@@ -41,6 +41,7 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
 
   const buttons = [
     {
+      id: 1,
       variant: 'PRIMARY',
       onClick: undefined,
       children: formButtonInnerText,
