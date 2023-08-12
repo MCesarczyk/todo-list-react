@@ -23,6 +23,7 @@ export const Section = ({
 );
 
 const SectionContainer = styled.section`
+  color: ${({ theme }) => theme.color.primaryText};
   background-color: ${({ theme }) => theme.color.background};
   margin-bottom: 10px;
   padding: 15px;

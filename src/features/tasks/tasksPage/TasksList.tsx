@@ -41,7 +41,7 @@ export const StyledTaskList = styled.ul`
 `;
 
 export const StyledLink = styled(Link)`
-  color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primaryText}; 
 
   &:active {
     filter: brightness(150%);

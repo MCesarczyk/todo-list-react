@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
 
-import { Switcher } from 'common/languages/Switcher';
 import { descriptions } from 'common/languages/descriptions';
 import { changeLanguage } from 'common/languages/languageSlice';
+import { Switcher } from 'ui/molecules/Switcher';
 
 interface HeaderProps {
   title: string;

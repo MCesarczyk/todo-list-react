@@ -44,3 +44,9 @@ Remove.args = {
   variant: 'REMOVE',
   children: '🗑',
 };
+
+export const Text = Template.bind({});
+Text.args = {
+  variant: 'TEXT',
+  children: 'TXT',
+};

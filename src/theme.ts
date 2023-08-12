@@ -13,6 +13,7 @@ export const theme = {
   
     primary: '#36A18B',
     primaryDarker: '#2F8A83',
+    primaryText: '#000',
     headerLink: '#000',
     headerLinkHover: '#266678',
     headerLinkBgHover: 'rgba(54, 161, 139, .1)',

@@ -45,7 +45,7 @@ const styles: Palette<ButtonVariants, ButtonStyles> = {
     disabledBackgroundColor: 'grey',
   },
   TEXT: {
-    color: 'primary',
+    color: 'primaryText',
     backgroundColor: 'transparent',
     borderColor: 'transparent',
     hoverBackgroundColor: 'transparent',
