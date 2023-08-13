@@ -1,11 +1,11 @@
 import { ComponentProps } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 
-import { TasksPageView } from './TasksPageView';
+import { TaskPageView } from './TaskPageView';
 
 export default {
-  title: 'Views/TasksPageView',
-  component: TasksPageView,
+  title: 'Views/TaskPageView',
+  component: TaskPageView,
   parameters: {
     layout: 'fullscreen',
   },
@@ -18,7 +18,7 @@ export default {
   },
 } as Meta;
 
-const Template: StoryFn<ComponentProps<typeof TasksPageView>> = (args) => <TasksPageView {...args} />;
+const Template: StoryFn<ComponentProps<typeof TaskPageView>> = (args) => <TaskPageView {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

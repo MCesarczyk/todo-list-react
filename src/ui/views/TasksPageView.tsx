@@ -11,24 +11,21 @@ import {
   toggleHideDone,
 } from 'app/tasks/tasksSlice';
 import { descriptions } from 'common/languages/descriptions';
-import { selectLanguage } from 'common/languages/languageSlice';
-import { Button } from 'ui/atoms/Button';
-import { FormButtons } from 'ui/molecules/FormButtons';
-import { Section } from 'ui/organisms/Section';
 import { Layout } from 'ui/templates/Layout';
+import { Section } from 'ui/organisms/Section';
+import { FormButtons } from 'ui/molecules/FormButtons';
+import { Button } from 'ui/atoms/Button';
 
 interface TasksPageViewProps {
+  language: string;
   form: ReactNode;
   search: ReactNode;
   tasksList: ReactNode;
 }
 
-export const TasksPageView = ({ form, search, tasksList }: TasksPageViewProps) => {
+export const TasksPageView = ({ language, form, search, tasksList }: TasksPageViewProps) => {
   const dispatch = useDispatch();
-
-  const language = useSelector(selectLanguage);
   const state = useSelector(selectState);
-
   const tasks = useSelector(selectTasks);
   const hideDone = useSelector(selectHideDone);
   const allDone = useSelector(selectIfAllDone);
@@ -79,6 +76,7 @@ export const TasksPageView = ({ form, search, tasksList }: TasksPageViewProps) =
 };
 
 TasksPageView.defaultProps = {
+  language: 'EN',
   form: 'Form module',
   search: 'Search module',
   tasksList: 'TasksList module',

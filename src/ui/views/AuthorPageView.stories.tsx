@@ -1,11 +1,11 @@
 import { ComponentProps } from 'react';
 import { StoryFn, Meta } from '@storybook/react';
 
-import { TasksPageView } from './TasksPageView';
+import { AuthorPageView } from './AuthorPageView';
 
 export default {
-  title: 'Views/TasksPageView',
-  component: TasksPageView,
+  title: 'Views/AuthorPageView',
+  component: AuthorPageView,
   parameters: {
     layout: 'fullscreen',
   },
@@ -15,10 +15,12 @@ export default {
       options: ['EN', 'PL'],
       control: { type: 'radio' },
     },
+    authorName: { control: 'text' },
+    description: { control: 'text' },
   },
 } as Meta;
 
-const Template: StoryFn<ComponentProps<typeof TasksPageView>> = (args) => <TasksPageView {...args} />;
+const Template: StoryFn<ComponentProps<typeof AuthorPageView>> = (args) => <AuthorPageView {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};
