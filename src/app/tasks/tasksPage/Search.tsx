@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { styled } from 'styled-components';
 import { selectLanguage } from 'common/languages/languageSlice';
 import { descriptions } from 'common/languages/descriptions';
-import { useQueryParameter, useReplaceQueryParameter } from 'features/tasks/tasksPage/queryParameters';
+import { useQueryParameter, useReplaceQueryParameter } from 'app/tasks/tasksPage/queryParameters';
 import { SEARCH_QUERY_PARAM_NAME } from './constants';
 import { Input } from 'ui/atoms/Input';
 

@@ -27,3 +27,5 @@ const SwitcherWrapper = styled.div`
   display: flex;
   gap: 10px;
 `;
+
+Switcher.displayName = 'Switcher';

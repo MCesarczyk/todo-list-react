@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 
-import { Layout } from 'app/Layout';
 import { selectLanguage } from 'common/languages/languageSlice';
 import { descriptions } from 'common/languages/descriptions';
+import { Layout } from 'ui/templates/Layout';
 import { Section } from 'ui/organisms/Section';
 
 export const AuthorPage = () => {

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { styled } from 'styled-components';
-import { defaultTitle, sampleBody, sampleExtraContent } from '~/ui/organisms/fixtures';
+import { defaultTitle, sampleBody, sampleExtraContent } from 'ui/organisms/fixtures';
 
 interface SectionProps {
   title: string;
@@ -9,9 +9,9 @@ interface SectionProps {
 }
 
 export const Section = ({
-  title = defaultTitle,
-  body = sampleBody,
-  extraHeaderContent = sampleExtraContent,
+  title,
+  body,
+  extraHeaderContent,
 }: SectionProps) => (
   <SectionContainer>
     <HeaderWrapper>
@@ -49,3 +49,11 @@ const Header = styled.h2`
   font-size: 20px;
   margin: 0 0 1px 0;
 `;
+
+Section.defaultProps = {
+  title: defaultTitle,
+  body: sampleBody,
+  extraHeaderContent: sampleExtraContent,
+};
+
+Section.displayName = 'Section';

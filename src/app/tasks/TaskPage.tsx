@@ -1,10 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
 import { RootState } from 'store';
-import { Layout } from 'app/Layout';
 import { getTasksById } from 'app/tasks/tasksSlice';
 import { descriptions } from 'common/languages/descriptions';
 import { selectLanguage } from 'common/languages/languageSlice';
+import { Layout } from 'ui/templates/Layout';
 import { Section } from 'ui/organisms/Section';
 
 export const TaskPage = () => {

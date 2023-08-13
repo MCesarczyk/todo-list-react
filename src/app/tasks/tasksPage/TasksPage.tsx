@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Layout } from 'app/Layout';
 import {
   fetchExampleTasks,
   selectHideDone,
@@ -12,9 +11,10 @@ import {
 } from 'app/tasks/tasksSlice';
 import { descriptions } from 'common/languages/descriptions';
 import { selectLanguage } from 'common/languages/languageSlice';
-import { Button } from 'ui/atoms/Button';
-import { FormButtons } from 'ui/molecules/FormButtons';
+import { Layout } from 'ui/templates/Layout';
 import { Section } from 'ui/organisms/Section';
+import { FormButtons } from 'ui/molecules/FormButtons';
+import { Button } from 'ui/atoms/Button';
 import { Form } from './Form';
 import { Search } from './Search';
 import { TasksList } from './TasksList';
