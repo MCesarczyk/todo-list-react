@@ -1,21 +1,20 @@
 import { FormEvent, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { styled } from 'styled-components';
 import { nanoid } from '@reduxjs/toolkit';
+
 import { addTask } from 'app/tasks/tasksSlice';
 import { FormButtons } from 'ui/molecules/FormButtons';
 import { Input } from 'ui/atoms/Input';
+import { descriptions } from '~/common/languages/descriptions';
+import { selectLanguage } from '~/common/languages/languageSlice';
 
-interface FormProps {
-  inputPlaceholder: string;
-  formButtonInnerText: string;
-}
-
-export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
+export const Form = () => {
   const [newTaskContent, setNewTaskContent] = useState('');
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const dispatch = useDispatch();
+  const language = useSelector(selectLanguage);
 
   const onFormSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -44,7 +43,7 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
       id: 1,
       variant: 'PRIMARY',
       onClick: undefined,
-      children: formButtonInnerText,
+      children: descriptions[language].formButtonInnerText,
     },
   ];
 
@@ -53,7 +52,7 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
       <Input
         ref={inputRef}
         value={newTaskContent}
-        placeholder={inputPlaceholder}
+        placeholder={descriptions[language].inputPlaceholder}
         onChange={({ target }) => setNewTaskContent(target.value)}
       />
       <FormButtons buttons={buttons} />
