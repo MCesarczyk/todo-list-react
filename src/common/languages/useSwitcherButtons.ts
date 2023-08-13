@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { descriptions } from 'common/languages/descriptions';
 import { changeLanguage } from 'common/languages/languageSlice';
 
-export const useButtons = () => {
+export const useSwitcherButtons = () => {
   const dispatch = useDispatch();
 
   const languageKeys = Object.keys(descriptions);

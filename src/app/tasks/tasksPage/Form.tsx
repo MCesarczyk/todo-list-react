@@ -2,7 +2,7 @@ import { FormEvent, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
 import { nanoid } from '@reduxjs/toolkit';
-import { addTask } from 'features/tasks/tasksSlice';
+import { addTask } from 'app/tasks/tasksSlice';
 import { FormButtons } from 'ui/molecules/FormButtons';
 import { Input } from 'ui/atoms/Input';
 
@@ -55,7 +55,6 @@ export const Form = ({ inputPlaceholder, formButtonInnerText }: FormProps) => {
         value={newTaskContent}
         placeholder={inputPlaceholder}
         onChange={({ target }) => setNewTaskContent(target.value)}
-        autoFocus
       />
       <FormButtons buttons={buttons} />
     </FormComponent>

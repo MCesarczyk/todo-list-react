@@ -17,9 +17,9 @@ export default {
     disabled: { control: 'boolean' },
     variant: {
       table: {
-        disable: true
-      }
-    }
+        disable: true,
+      },
+    },
   },
 } as Meta;
 

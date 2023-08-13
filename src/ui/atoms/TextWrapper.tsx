@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { css, styled } from 'styled-components';
+import { styled } from 'styled-components';
 
 export type TextWrapperVariants = 'PRIMARY' | 'STRIKETHROUGH';
 

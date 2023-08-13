@@ -3,6 +3,7 @@
   "version": "0.1.2",
   "private": true,
   "homepage": "https://mcesarczyk.github.io/todo-list-react/",
+  "type": "module",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.12.0",
@@ -21,8 +22,11 @@
   "scripts": {
     "commit": "cz",
     "release": "standard-version",
-    "lint": "eslint . --ext .ts,.tsx",
-    "format": "npx prettier --write .",
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "dev": "vite",
     "test": "vitest watch",
@@ -38,9 +42,7 @@
   },
   "eslintConfig": {
     "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
+      "react-app"
     ]
   },
   "browserslist": {
@@ -65,9 +67,18 @@
     "@storybook/react": "^7.2.1",
     "@storybook/react-vite": "^7.2.1",
     "@storybook/testing-library": "^0.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
     "@vitejs/plugin-react": "^4.0.0",
     "@vitest/coverage-c8": "^0.31.0",
     "chromatic": "^6.21.0",
+    "eslint": "^8.16.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-storybook": "^0.6.13",
     "husky": "^8.0.3",
     "path": "^0.12.7",
@@ -77,6 +88,7 @@
     "storybook": "^7.2.1",
     "typescript": "^5.0.4",
     "vite": "^4.3.6",
+    "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-svgr": "^3.2.0",
     "vite-tsconfig-paths": "^4.2.0",
     "vitest": "^0.31.0"

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { descriptions } from 'common/languages/descriptions';
-import { selectLanguage } from 'common/languages/languageSlice';
+
+import { Layout } from 'app/Layout';
 import {
   fetchExampleTasks,
   selectHideDone,
@@ -9,8 +9,9 @@ import {
   selectTasks,
   setAllDone,
   toggleHideDone,
-} from 'features/tasks/tasksSlice';
-import { Layout } from 'features/Layout';
+} from 'app/tasks/tasksSlice';
+import { descriptions } from 'common/languages/descriptions';
+import { selectLanguage } from 'common/languages/languageSlice';
 import { Button } from 'ui/atoms/Button';
 import { FormButtons } from 'ui/molecules/FormButtons';
 import { Section } from 'ui/organisms/Section';

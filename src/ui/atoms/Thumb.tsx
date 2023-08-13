@@ -34,7 +34,7 @@ const styles: Palette<ThumbVariants, ThumbStyles> = {
     color: 'primaryText',
     backgroundColor: 'white',
     borderColor: 'primaryText',
-  }
+  },
 };
 
 interface ThumbProps {
@@ -73,7 +73,7 @@ const StyledThumb = styled.button<StyledThumbProps>`
     filter: brightness(130%);
     transform: scale(1.05);
   }
-  
+
   &:active {
     filter: brightness(160%);
     transform: scale(1);

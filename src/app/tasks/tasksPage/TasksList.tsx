@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { styled } from 'styled-components';
 
 import { RootState } from 'store';
-import { selectTasksByQuery, toggleTaskDone, removeTask, selectHideDone } from 'features/tasks/tasksSlice';
-import { SEARCH_QUERY_PARAM_NAME } from './constants';
+import { selectTasksByQuery, toggleTaskDone, removeTask, selectHideDone } from 'app/tasks/tasksSlice';
 import { ListItem } from 'ui/molecules/ListItem';
+import { SEARCH_QUERY_PARAM_NAME } from './constants';
 
 export const TasksList = () => {
   const location = useLocation();
@@ -41,7 +41,7 @@ export const StyledTaskList = styled.ul`
 `;
 
 export const StyledLink = styled(Link)`
-  color: ${({ theme }) => theme.color.primaryText}; 
+  color: ${({ theme }) => theme.color.primaryText};
 
   &:active {
     filter: brightness(150%);

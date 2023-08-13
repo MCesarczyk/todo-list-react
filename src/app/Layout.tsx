@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { styled } from 'styled-components';
 
 import { Switcher } from 'ui/molecules/Switcher';
-import { useButtons } from 'features/useButtons';
+import { useSwitcherButtons } from 'common/languages/useSwitcherButtons';
 
 interface LayoutProps {
   title: string;
@@ -10,7 +10,7 @@ interface LayoutProps {
 }
 
 export const Layout = ({ title, children }: LayoutProps) => {
-  const { buttons } = useButtons();
+  const { buttons } = useSwitcherButtons();
 
   return (
     <>
