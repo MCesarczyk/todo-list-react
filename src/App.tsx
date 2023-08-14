@@ -1,29 +1,33 @@
+import { useEffect } from 'react';
 import { Route, HashRouter, Routes, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+
+import { TasksPage } from 'app/tasks/tasksPage/TasksPage';
+import { TaskPage } from 'app/tasks/TaskPage';
+import { AuthorPage } from 'app/author/AuthorPage';
 import { selectLanguage } from 'common/languages/languageSlice';
 import { descriptions } from 'common/languages/descriptions';
-import { TasksPage } from 'features/tasks/tasksPage/TasksPage';
-import { TaskPage } from 'features/tasks/TaskPage';
-import { AuthorPage } from 'features/author/AuthorPage';
-import { Nav } from 'common/nav/Nav';
-import { useEffect } from 'react';
-import { version } from "../package.json";
+import { Nav } from 'common/Nav';
+import { version } from '../package.json';
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const title = 'React';
 
 export const App = () => {
   const language = useSelector(selectLanguage);
 
   document.title = descriptions[language].headerTitle;
-  
+
   useEffect(() => {
     console.log(`Version: ${version}`);
-  }, [version]);
+  }, []);
 
   return (
     <HashRouter>
       <Nav
-        tasksPath={"/tasks"}
+        tasksPath={'/tasks'}
         tasksLabel={descriptions[language].tasksPageTitle}
-        authorPath={"/author"}
+        authorPath={'/author'}
         authorLabel={descriptions[language].authorPageTitle}
       />
       <Routes>

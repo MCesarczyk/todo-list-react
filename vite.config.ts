@@ -3,10 +3,15 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 import svgr from 'vite-plugin-svgr';
+import eslint from 'vite-plugin-eslint';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [react(), viteTsconfigPaths(), svgr({ svgrOptions: { icon: true } })],
+  plugins: [react(), viteTsconfigPaths(), eslint({
+    cache: false,
+    include: ['./src/**/*.js', './src/**/*.jsx'],
+    exclude: [],
+  }), svgr({ svgrOptions: { icon: true } })],
   resolve: {
     alias: {
       '~': path.resolve(__dirname, '/src'),
