@@ -38,7 +38,9 @@
     "predeploy": "npm run build",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build",
-    "storybook:publish": "npx chromatic --project-token=chpt_8aeb48aa770cc36"
+    "build-storybook": "storybook build",
+    "storybook:publish": "npx chromatic --project-token=chpt_8aeb48aa770cc36",
+    "chromatic": "npx chromatic --project-token=chpt_8aeb48aa770cc36"
   },
   "eslintConfig": {
     "extends": [
