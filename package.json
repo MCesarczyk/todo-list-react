@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://mcesarczyk.github.io/todo-list-react/",
   "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
     "@testing-library/jest-dom": "^5.12.0",

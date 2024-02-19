@@ -7,11 +7,16 @@ import eslint from 'vite-plugin-eslint';
 import path from 'path';
 
 export default defineConfig({
-  plugins: [react(), viteTsconfigPaths(), eslint({
-    cache: false,
-    include: ['./src/**/*.js', './src/**/*.jsx'],
-    exclude: [],
-  }), svgr({ svgrOptions: { icon: true } })],
+  plugins: [
+    react(),
+    viteTsconfigPaths(),
+    eslint({
+      cache: false,
+      include: ['./src/**/*.js', './src/**/*.jsx'],
+      exclude: [],
+    }),
+    svgr({ svgrOptions: { icon: true } }),
+  ],
   resolve: {
     alias: {
       '~': path.resolve(__dirname, '/src'),
