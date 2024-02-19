@@ -3,7 +3,6 @@
   "version": "0.1.2",
   "private": true,
   "homepage": "https://mcesarczyk.github.io/todo-list-react/",
-  "type": "module",
   "engines": {
     "node": ">=20"
   },
